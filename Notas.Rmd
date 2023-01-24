@@ -1,0 +1,757 @@
+---
+title: "Notas trabajo"
+author: "Jaime A. Prudencio-Vázquez"
+date: "`r Sys.Date()`"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+[@Godinez2004]
+
+En este trabajo, @Godinez2004, enmarca el problema del desarrollo en una perspectiva nacional y reocnoce el papel del estado en su promoción y donducción. En este contexto, destaca las posibles ventajas que pueden tener políticas de apoyo a agrupamientos productivos. Se podría decir que este es el trabajo seminal que dio pauta al análsis reginal de parte de Godinez-Enciso.
+
+1. Estudios sobre los cambios en los patrones de localización
+
+[@GomezZaldivar2017]
+Este estudio tiene relación con el interés de investigación, al igual que el de Trejo-Nieto (2012) en la medida en que aborda patrones de distribución geográfica de la actividad manufacturera, aunque no habla explícitamente de clusters, pues trata industrias aisladas y medidas de localización y especialización. Muestra que el proceso de apertura trajo consecuencias en la distribución espacial de la actividad (localización) y también en la especialización a nivel estatal (concentración). Además, el análisis refiere patrones de autocorrelación en los cambios en la contribución de la concentración de la producción entre 1993- y 2003 (ver sección 3.2.1, figura 4).
+
+En línea con el estudio de @TrejoNieto2013, en éste, @GomezZaldivar2017 están interesados en conocer cómo el proceso de apertura modificó _la localización_ de la actividad económica manufacturera y su nivel de _especialización_. Concretamente, en su estudio buscan "proporcionar una descripción clara del patrón cambiante de la producción manufacturera dentro del país y determinar si las predicciones de los modelos teóricos sobre comercio son precisas o no" (p. 303).
+
+El estudio, a nivel estatal, echa mano de información para los 21 subsectores de la manufactura entre 1993 y 2013. La evaluación de los _cambios en la localización y especialización_ corre a cargo de un índice global de especialización y localización construido a partir de información local, con base en la metodología usada por Mulligan y Schmidt (2005): un par de medidas que combinan la información de especialización (por industria) y concentración (por estado) (ver ecuaciones 1 a 4).
+
+Medida a partir del índice global, hay evidencia de que entre 1993 y 2003, hubo un incremento en la localización y especialización; no obstante, a partir de 2003, la especialización y localización de la manufactura disminuye como resultado del ingreso de China a la Organización Mundial de Comercio (OMC).
+
+Los autores resumen sus hallazgos como: "Los resultados presentados aquí están en línea con las predicciones de los modelos comerciales teóricos, ya que se produjo un aumento en la especialización regional o localización industrial después de la eliminación gradual de las barreras comerciales. Además, indican que existe una autocorrelación espacial positiva entre el valor del cambio en la contribución de cada estado y la concentración general de la actividad manufacturera, lo que sugiere un patrón o estructura espacial entre estados en términos del cambio en su contribución a la concentración global" (p. 312).
+
+
+@TrejoNieto2013
+
+El documento no contribuye directamente a nuestros propósitos, sin embargo, sí permite poner en contexto el estudio con relación a los interesados en la _concentración geográfica_ y su medición. No estudia clusters, sino industrias individuales. Sin embargo, muchos de los estudios que pretenden hablar de clustes lo hacen de este modo: a través de medidas de concentración geográfica. En este sentido, el estudio es relevante pues pertenece a esa tradición.
+
+En el contexto de los efectos que sobre industrias particulares ha tenido el proceso de apertura económica en nuestro país, @TrejoNieto2013 desarrolla un estudio en el que aborda cuatro ideas relacionadas con los aspectos geográficos de la actividad económica manufacturera en México (p. 39): "i) la extensión a la que las industrias manufactureras se localizan y concentran, ii) las diferencias en concentración entre industrias, iii) la dinámica de la concentración geográfica en el tiempo y iv) los determinantes de las variaciones en la concentración entre industrias".
+
+La autora comienza a partir de la distinción entre _concentración geográfica_, _aglomeración_ y _localización_. Para ella, concentración geográfica hace referencia a la "distribución espacial de los sectores a un nivel desagregado" (p. 40), en tanto, la aglomeración es un término reservado para referirse a lo que ocurre con el conjunto de la actividad económica o de los grandes sectores, como las actividades de la manufactura o los servicios; en tanto que cuando se usa el término localización se hace referencia explícita a dónde se halla determinada actividad y no a sus otras características. 
+Una afirmación que resulta de relevancia para nuestros estudios sectoriales es su afirmación sobre que "las industrias tienen productos particulares y mercados característicos de modo que la concentración geográfica tiende a estar vinculada fuertemente a una actividad específica" (...) por lo que es importante observar los patrones geográficos de industrias particulares en aras de comprender el comportamiento conjunto de la manufactura" (p. 42)
+
+Así, la autora busca conocer los patrones de _concentración geográfica_ para 54 actividades económicas entre 1988 y 2003 mediante los índices de Herfindahl y Gini a nivel estatal. Además, plantea modelos econométricos para explicar dicha concentración (absoluta, medida con el índice de Gini) a través de un conjunto de variables asociados en términos teóricos con la propuesta de la Nueva Geografía Económica (véase tabla 9).
+
+Entre los resultados más relevantes encontrados por la autora a partir del modelo panel estimado es que, a nivel estatal, "las industrias fuertemente vinculadas con el exterior a través del monto de sus exportaciones, tienden a concentrarse (en regiones de fácil acceso a sus mercados relevantes)" (p 56)
+
+
+
+
+2. Estudios sobre clusters específicos
+
+@Rabellotti1995
+
+En relación con nuestro interés, este estudio es importante en la medida en que define con precisión la concepción típica sobre _distrito industrial_, que a veces es equiparado con el término cluster. El concepto por la autora utilizado, difiere del enfoque que buscamos dar a nuestro trabajo, más centrado en las relaciones efectivas dadas por el vínculo de insumo producto. No obstante, en términos de la necesidad de precisión terminológica, este estudio contribuye al brindar la definición de "libro de texto".
+
+
+En este estudio, la autora busca contrastar dos clusters de la industria del calzado, uno en Italia y otro en México, con respecto a la concepción teórica más general sobre clusters, es decir, indicar la medida en que las agrupaciones empíricas se asemejan o difiren de las teóricas. El concepto manejadado aquí referente a cluster es el de "distrito industrial".
+
+La autora es tajante respecto a su apreciación sobre qué es un distrito industrial en el contexto de lo que para ella pueden ser quivocos o mal interpretaciones cuando se le entiende como una receta a copiar: "el marco del distrito industrial, sin embargo, no es un modelo analítico, sino más bien una lista de hechos estilizados útiles para organizar investigaciones empíricas y compararlas con casos del mundo real" [@Rabellotti1995: p. 29].
+
+Las caraterísticas del distrito industrial al "estilo italiano", son enlistadas por la autora [@Rabellotti1995:  p.30]:
+
+"- agrupaciones de empresas principalmente pequeñas y medianas, espacialmente concentradas y sectorialmente especializadas;  
+- un conjunto de vínculos hacia adelante y hacia atrás, basados en intercambios de bienes, información y personas tanto en el mercado como fuera del mercado;  
+- un trasfondo cultural y social común que vincula a los agentes económicos y crea un código de comportamiento, a veces explícito pero a menudo implícito;  
+- una red de instituciones locales públicas y privadas de apoyo a los agentes económicos que actúan en el clúster."
+
+La interacción de estos cuatro elementos tiene consecuencias favorables sobre el desempeño de las empresas que ahí participan, entre las que se cuentan la reducción de los costos (ventajas estáticas), así como los saberes o habilidades adquiridas por parte de los participantes mediante la socialización del conocimiento (ventajas dinámicas), economías de proximidad que reducen los llamados costos de transacción, sobre todo de información que se transite informalmente, impulso a procesos de innovación, dados por la imitación o la existencia explícita de organismos que la apoyan, mercados informales de trabajo que permiten flexibilidad, especializacíón.
+
+Si bien se mira, podría decirse que estos "distritos industriales", no son más que una forma contemporánea del capitalismo en sus fases iniciales de desarrollo.
+
+
+@GarzaBurgos2018
+
+En su trabajo sobre el cluster de la industria aeroespacial en Querétaro, [@GarzaBurgos2018] tratan de identificar "las causas del desarrollo de dicho conglomerado [y, al hacerlo, identificará]e identificar] los factores clave en el desarrollo del conglomerado y lo que hace que Querétaro sea atractivo para la inversión extranjera directa" (p. 2).
+
+La noción de cluster por ellos manejada corresponde a la de Porter (1990; citado por Garza Burgos et al. 2018, p. 4) en la que son concebidos como industrias relacionadas ubicadas en regiones específicas que se interrelacionan a través de vínculos insumo producto, y que pueden compartir clientes, tecnología o canales de comunicación. Además, dichos _clusters industriales_ están también integrados por elementos institucionales.
+
+Además, desde una perspectiva del alcance regional o dimensión regional de los clusters, indican una clasificación de éstos: i) clusters industriales locales, que proveen sólo al mercado local, clusters dependientes de recursos naturales, cuya localización está determinada por la presencia de dichos recursos y ii) clusters de bienes industriales transables, es decir, agrupamientos industriales que proveen bienes más allá de su entorno local.
+
+Si bien los clusters de bienes transables no son los que ofrecen la mayor cantidad de empleo en Estados Unidos (los cluster industriales locales ofrecen empleo a 67% de la población, en contraste con 32% de los de los bienes transables), sí que es cierto que aquellos ofrecen salarios más altos y su dinámica de productividad y crecimiento es más acelerada.
+
+La forma o configuración del cluster, que se refiere a cómo está estructurado el agrupamiento en términos del tamaño de las empresas y de la dependencia al actor dominante y cómo ocurre una jerarquización y/o subordinación de las empresas según se trate o no de empresas multinacionales es otro de los rasgos a tener en consideración para mejor comprender su dinámica y operación.
+
+¿Cuáles son las condiciones que deben cumplirse para la potencial existencia de un cluster? A decir de los autores, deberían conjuntarse tres condiciones: i) Que una región en particular, tenga los factores y características necesarias o prerrequisitos que sientan la posibilidad de existencia (estos elementos no son discutidos ni se da más información sobre ellos, uno podría suponer que se trata de factores dados por la lógica de rentabilidad de la empresa en su actividad específica, es decir, son propios de cada actividad), ii) la presencia de un actor clave que haga uso de los factores potenciales y iii) un proceso acumulativo de crecimiento.
+
+Para el caso particular de los cluster de bienes transables, la localización de una empresa multinacional (factor ii) ha sido plenamente documentada como un elemento atractor de empresas abastecedoras y, por tanto, de la formación de agrupamientos, tal y como ha acontecido con la industria automotriz.
+
+En este caso, pues, se da por sentada la existencia del citado cluster aeroespacial y se discuten los factores que le dieron origen, con base en una comparación con un estudio llevado a cabo para 159 casos (no especificando si es para la industria aeroespacial o para cuales). A partir de ello, los autores comparar si, desde su particular punto de vista, Querétaro cumplía o no con dichos factores: factores prerrequisito, factores desencadenantes y factores acumulativos.
+
+
+@JimenezAlmaguer2013
+
+En este esudio, los autores pretenden, a través de un estudio basado en entrevistas de fondo, identificar los factores que inciden sobre el desempeño de cuatro clusters presentes en Tamaulipas México (petroquímica, automotriz, eléctrico-electrónico y tecnologías de la información). No discuten los métodos de identificación ni evaluán críticamente la presencia de dichos agrupamientos.
+
+Sus resultados indican que "el desempeño es resultado de su ubicación geográfica, identidad sociocultural, redes internas,  especialización  y  formación  del  capital  humano" (p. 89)
+
+
+
+3. Estudios sobre los métodos de identificación de concentraciones
+
+@Komorowski2020
+
+
+
+
+
+@MendozaVelazquez2017
+
+A diferencia de los dos estudios anteriores (Trejo-Nieto 2013; Gómez-Zaldivar 2017), en este sí se mencionan explícitamente como parte del interés de investigación los denominados clusters. En este sentido, la investigación está más estrechamente vinculada con la que se pretende llevar a cabo. Respecto al tópico de métodos para la identificación de clusters, en este estudio se recurre a la propuesta de Porter (1998, 2003, citados por Mendoza-Velázquez 2017) a través del proyecto _US Cluster Mapping _, del _Institute for Strategy and Competitiveness_, de la Harvard Business School.
+
+Además, propone un modelo donde estima el crecimiento del empleo dentro de cada cluster identificado a través de: medidas de especialización, de competenicia y de diversidad. En este sentido, el estudio se aproxima en muy buena medida a lo estudiado por Prudencio 2021.
+
+El objetivo de @MendozaVelazquez2017 es estudiar los efectos de la especialización (externalidades tipo Marshall-Arrow-Romer, MAR), la competencia (externalidades tipo Jacobs) y diversidad industrial (externalidades Porterianas) sobre el crecimiento del empleo en agrupamientos de actividades (clusters), así como en actividades tenidas de forma individual para las 32 entidades de la república.
+
+Entre los estudios revisados es posible distinguir a veces cierta ambigüedad terminológica, pues, para el caso particular de @MendozaVelazquez2017, también refiere el término concentración, sin dar una definición precisa.
+
+Usando la metodología propuesta por Porter a través del proyecto _US Cluster Mapping _, del _Institute for Strategy and Competitiveness_, de la Harvard Business School. A través de este método logran identificar 41 clusters de industrias que producen bienes transables ( _traded industries_ ), es decir, industrias cuya localización depende relativamente poco de las condiciones geográficas. De estos, "8 fueron clasificados como clusters de alta tecnología, 10 como clusters de servicios y 23 como clusters industriales. Cada cluster está integrado por una media de 28 industrias" [@MendozaVelazquez2017, p. 9].
+
+En su estudio, este autor encuentra que "la especialización industrial ejerce un impacto negativo en el crecimiento del empleo dentro de los estados y dentro de los conglomerados, lo que indica que las industrias comercializadas en México conllevan muy poca innovación, pueden operar en etapas tempranas del ciclo de vida, enfrentar altos costos de reasignación de empleo o exhibir baja adaptabilidad. Un impacto negativo de la especialización en el empleo se ajusta al tipo de externalidades de Jacobs (1969)" (p. 426).
+
+
+@GonzalezVillareal2017
+
+@GonzalezVillareal2017 se plantean identificar para México lo que denominan "complejos industriales" con el propósito de proporcionar ideas de política económica para dichos espacios de concentración en el contexto de la especialización inteligente y la variedad relacionada, medidas inspiradas en las estrategias de política regional de la Unión Europea [@Balland2019; @Frenken2007].
+
+Uno de los aspectos relevantes de este trabajo es que lleva a cabo una distinción terminológica de la categoría central en su trabajo: *complejos industriales*, esto es así porque dicha categoría se asemeja a otras tales como clusters, cadenas de valor y distritos industriales.
+
+Los elementos que distinguen al concepto de complejo industrial en contraste con el de distrito industrial es que mientras el segundo toma en consideración los aspectos de carácter no económico, como los institucionales y socioculturales,  para el primero no son relevantes . En tanto, el complejo industrial se distingue del cluster porque aquel ofrece una mayor precisión del alcance de las relaciones entre las empresas que integran el complejo a través de vínculos de insumo producto, característica que suele ser vaga en la definición de cluster [@GonzalezVillareal2017].
+
+Si bien @GonzalezVillareal2017 hacen esta distinción, más adelante afirman que las ventajas atribuidas a los clusters también son aplicables a los complejos industriales; entre dichas ventajas se encuentran: el acceso a insumos y trabajadores especializados (lo que tiene sentido con la acepción restringida enfocada a los aspectos económicos de los complejos industriales), a información, instituciones y bienes públicos (aspectos de carácter no económico).
+
+Este estudio toma como fuente de información la Matriz de Insumo Producto de México del año 2003 a cuatro dígitos según el Sistema de Clasificación Industrial de América del Norte. La segunda fuente de información son los Censos Económicos de 2009 del que se obtienen datos sobre el empleo para el mismo nivel de desagregación sectorial.
+
+_Método_
+
+El método usado por los autores en este artículo se divide en dos pasos: i) Identificar las cadenas productivas relevantes para luego ii) llevar a cabo su espacialización.
+
+
+Para el paso i, es necesario comprender la lógica con base en la cuál puede ser leída la matriz de insumo producto. Cada una de las celdas que compone la matriz de insumo producto, llamémosla $a_{ij}$, indica las ventas que realiza el sector i al sector j. Asimismo, la celda $a_{ji}$ indica las ventas hechas por el sector j al sector i.
+
+De forma concreta, para la matriz de insumo producto por sector de actividad de 2013, si i corresponde a la manufactura y j a construcción, se tiene que $a_{ij}=452,579$ es decir, las compras intermedias que realiza la construcción (j) a la manufactura (i). En tanto, $a_{ji}= 10,546$, es decir, las compras intermedias que realiza la manufactura a construcción. Ahora bien, el cálculo de los coeficientes que a continuación se describen, también se hace referencia a las compras totales, tanto de i ($P_i$) como de j ($P_j$), además de las ventas totales, también de i ($S_i$) y de j ($S_j$). Así, considerando que i es manufactura y j es construcción: $P_i=  7,055,610$ y $P_j=   884,657$; por su parte, las ventas totales de i son $S_i=  9,635,835$ y las ventas totales de j son $S_j= 2,094,547$.
+
+Así pues, los cuatro coeficientes de @GonzalezVillareal2017 y que son los mismos usados por @Feser2000 son:
+
+
+*Revisar con cuidado*
+a. $x_{ij}=\frac{\alpha_{ij}}{P_j}$: la proporción de compras que realiza j a i, en relación con las compras totales que realiza j, es decir, qué tan importantes relativamente son las compras de j a i. En nustro ejemplo entre la manufactura (i) y la construcción (j), se tiene que \$452,579 de las compras de j a i divididas entre las compras totales de j que son de $884,657 nos da un a__ij de 
+b. $x_{ji}=\frac{\alpha_{ji}}{P_i}$: la proporción de los bienes y servicios comprados por i a j, en relación con las compras totales realizadas por i.
+c. $y_{ij}=\frac{\alpha_{ij}}{S_j}$: la proporción de los bienes y servicios vendidos por la industria _i_ a la industria _j_ ($\alpha_{ij}$) eb relación con las ventas totales de la industria _j_ ($S_j$).
+d. $y_{ji}=\frac{\alpha_{ji}}{S_i}$: la proporción de los bienes y servicios vendidos por la industria _j_ a la industria _i_ ($\alpha_{ji}$) en relación con las ventas totales de la industria _i_ ($S_i$).
+*Revisar con cuidado*
+
+Dentro de este mismo paso i, obtenidos los coeficientes anteriores, "se calculan cuatro coeficientes de correlación por pares en los vectores de compra y venta de la industria para capturar la semejanza estructural de compra y venta entre dos industrias, i y j" (@GonzalezVillareal2017: 5). Resultado de esto, se debe contar con cuatro matrices que caracterizan las relaciones interindustriales. Este último procedimiento está basado en @Feser2009. 
+
+Ahora bien, el paso ii consiste en espacializar o regionalizar las relaciones insumo producto identificadas, es decir, en observar dónde dichas cadenas identificadas tienen mayor presencia. Esto se hace como:
+
+i) Estimar una regresión del empleo total del empleo total sobre el empleo de la cadena identificada.  
+ii) Extraer los residuales de la regresión  
+iii) Estimar un coeficiente de correlación (en el caso de @GonzalezVillareal2017 se uso la G de Getis y Ord) usando los errores del modelo para identificar las agrupaciones alto-alto
+
+Entre los resultados identificados por los autores se encuentra:
+
+La identificación de 5 cadenas productivas: manufactura de componentes electrónicos, automóviles, químicos, textiles y prendas de vestir y productos agrícolas y alimentos procesados.  
+
+Su distribución espacial a lo largo del territorio.
+
+
+Feser y Bergman (2000) es el estudio en el que se basan, en buena medida, @GonzalezVillareal2017. Se sintetizan a continuación sus principales ideas.
+
+El objetivo del artículo es "exponer un medio para usar información detallada sobre vínculos interindustriales que ayude a la identificación de clusters existentes o potenciales a nivel subregional en los Estados Unidos" [@Feser2000, p. 2].
+
+Los autores comienzan discutiendo el concepto de cluster que se aplica a un grupo de industrias relacionadas en alguno de los siguientes sentidos:
+
+- Vínculos efectivos de tipo insumo producto.  
+- Localización geográfica compartida o próxima.  
+- Instituciones locales compartidas vinculadas a la actividad desempeñada.  
+- Marcos de competencia y colaboración simultánea.
+
+Sin embargo, en su origen hacia finales de la década de los setenta el término cluster era más bien utlizado para destacar el primero de los elementos enlistados, es decir, las relaciones reales entre sectores dadas a través de los vínculos insumo-producto, con _independencia de sus aspectos geográficos_; el término más indicado entonces es el de _complejo industrial_. De este modo, el enfoque del que parten los autores para la identificación de clusters está basado en esta idea, es decir, en la identificación de industrias relacionadas con independencia de su localización, a través de la matriz de insumo-producto.
+
+@LagunaReyes2010
+
+Bajo la consideración más tradicional y acrítica del cluseter, asumido como "concentraciones de compañías e instituciones interconectadas en un campo en particular, que compiten  y cooperan" (p. 119). En su trabajo, el autor "analiza y aplica una metodología para identificar las cadenas productivas, como referencia para el análisis de la base económica de los clusters industriales regionales" (p. 119).
+
+
+
+El trabajo se conecta directamente con el objetivo de la investigación, en la medida en que utiliza la propuesta de Feser y Berman (2000) basada en el análisis insumo producto, y una extensión propuesta por Rey y Mattheis ().
+
+El trabajo se propone también un sentido político claro a partir de la identificación de las agrupaciones o cluseter: cómo estimularlos para el crecimiento.
+
+El autor refiere que no existe una definición plenamente clara sobre el sentido de cluster industrial. Sin embargo, los dos trabajos que serán tomados como base para mí propuesta (éste y el de Gonzalez, et al. 2017), hacen una distinción entre los aspectos económicos propiamente dichos y los aspectos institucionales o circulatorios.
+
+Específicamente, en su trabajo se define a los clusters como "un conjunto de sectores que usan cantidades relativamente grandes de los productos de los demás sectores" (p. 123), es decir, se centra en los aspectos puramente económicos de la definición más amplia.
+
+El enfoque de Feser y Bergman (2000) que es usado por el autor, es útil pues "el método basado en la extracción de encadenamientos a partir del modelo de insumo-producto permite usar un patrón general de agrupamientos, que ofrece un marco para hacer comparaciones entre regiones" (p. 126), es decir, se convierte en el primer paso para luego regionalizar los resultados.
+
+Este enfoque es denominado "top-down" y entre sus ventajas está "que permite la identificación de las cadenas pro-ductivas en el ámbito regional, a partir de los patrones de agrupamiento  nacionales. Esto hace posible identificar las brechas entre las cadenas de suministro locales en comparación con las nacionales, lo cual posibilita la determinación de áreas de especialización, ventajas competitivas regionales y oportunidades de desarrollo regional" (p. 127); pero entre las desventajas se encuentra que "al utilizar la economía nacional como referencia implícitamente asume que las diferencias tecnológicas, de productividad del trabajo y de patrones de consumo entre la economía nacional y las economías locales son nulas, lo cual puede resultar engañoso, en especial en los casos en los que la región verdaderamente se especializa en una cadena de producción en particular" (p. 127).
+
+La exposición metodológica de este autor sobre el método de Feser y Bergman (2000) arroja información adicional sobre el proceso a seguir:
+
+i) A partir de la MIP, hacer una "estandarización", es decir, construir los coeficientes citados previamente, aunque aquí introduce una distinción en términos de con qué denominador se construirá cada coeficiente: la suma interinsdutrial de compras/ventas o bien el total de compras/ventas de la economía.
+
+ii) El segundo paso es construir una matriz de correlación que recoja los valores máximos entre cada matriz con los coeficientes.
+
+iii) Sobre dicha matriz se aplicará el análisis factorial y "una vez que se extraen los factores se puede determinar la composición de cada cadena de valor. Para ello se utilizan las correlaciones entre cada industria con cada factor, las cuales se representan en una matriz de coeficientes de asociación o loadings. De acuerdo con este proceso, una industria puede pertenecer a más de un conglomerado, por lo que los agrupamientos construidos de este modo no son excluyentes entre sí" (p. 130).
+
+La matriz utilizada en la investigación de Laguna-Reyes (2010) corresponde a la de 1996 para 76 actividades económicas. Los resultados de este estudio son particularmente relevantes en el sentido de que permite comparar los agrupamientos detectados y su composición: se lograron identificar 12 cadenas productivas con información a nivel de 57 sectores de actividad.
+
+Ventajas del enfoque elegido:
+
+Este enfoque es denominado "top-down" y entre sus ventajas está "que permite la identificación de las cadenas pro-ductivas en el ámbito regional, a partir de los patrones de agrupamiento  nacionales. Esto hace posible identificar las brechas entre las cadenas de suministro locales en comparación con las nacionales, lo cual posibilita la determinación de áreas de especialización, ventajas competitivas regionales y oportunidades de desarrollo regional" (@LagunaReyes2010, p. 127);
+
+
+@TrejoNieto2018
+
+En su estudio buscan:
+
+i) Revisar la estructura económica, desempeño y cambios de la región centro, ii) Identificar los sectores económicos más relevantes de la región a través de la estimación de una MIP regional e identificar los clusters presentes en esta región y iii) establecer el desempeño de dichas agrupaciones.
+
+Respecto al punto ii, echan mano del método de Feser y Bergman (2000) que, según citan a Dávila (2008) mencionan que "este método cumple  con  cinco  criterios  que  lo  convierten  en  una  herramienta  útil  para identificar agrupamientos, cuando se cuenta con información de insumo-producto, que son: a) confiabilidad; b) capacidad de generar resultados en el corto plazo; c) bajo costo de instrumentación; d) posibilidad de desagregación sectorial de la información y e) flexibilidad para visualizar la presencia de cluster en ámbitos geográficos distintos" (p. 21)
+
+Las autoras explícan con cuidado el significado de los 4 coeficientes estimados por Feser y Bergman (2000):
+
+a) A(coeficiente i)-B (coeficiente ii): mide el grado de similitud entre los patrones de compra de las industrias i, j; b) C(coeficiente iii)-D (coeficiente iv): mide la similitud entre los patrones de venta de las industrias i, j; c) A-D: mide el grado en que los patrones de compra de i son similares a los patrones de venta de j y d) C-B: mide el grado en que los patrones de venta de i son similares a los patrones de compra de j" (p. 23).
+
+Luego, "La etapa siguiente consiste en la construcción de una matriz mixta nxn (en este caso de 28x28 sectores), integrada por el valor más alto de los índices de correlación de las matrices A, B, C, D. Sobre la matriz mixta  se  aplica  el  análisis  de  componentes  principales" (p. 23).
+
+Como resultado de su análisis, "logran la identificación de seis clusters en la economía de la RECEMEX, que agrupan a 21 de los 28 sectores" (p. 24)
+
+
+
+@GarciaCastro2008
+
+El trabajo de [@GarciaCastro2008] se enmarca de forma precisa en la temática a tratar: la identificación y evaluación de concentraciones de actividad económica regional. Las autoras reconocen la variedad conceptual en torno a la presencia de patrones de concentración de actividad en el espacio y ellas se decantan por denominarles Aglomeraciones Productivas Locales. Sin hacer explícita la definición, todo indica que siguen la idea básica del distrito industrial y la experiencia de la "tercera Italia" de los años setenta. 
+
+En su trabajo, proponen una "una metodología de fácil aplicación  para  identificar,  en  México,  aquellas  aglomeraciones  que  pueden  presentar externalidades  que  favorezcan  su  desarrollo" (p. 292). Su enfoque se basa la utilización de diversos índices de concentraci´n (coeficeinte de localización, de participación relativa y el de Hirschman-Herfindah) y de desigualdad (Gini), los que son ilustrados para el caso de la actividad manufacturara a nivel sector en el estado de Veracruz, en México.
+
+La variable utilizada para la construcción de los índices corresponde al personal ocupado, puesto que, desde la perspectiva de las autoras, refleja mejor la concentración generada por pequeñas y medianas empresas.
+
+Un elemento que contrasta de esta investigación con relación al método que será propuesto y seguido en el proyecto que se presentará es el hecho de que aquí no se definen agrupamientos de actividades o cadenas si no actividades aisladas, aunque se reconoce la importancia de estudiar los encadenamientos productivos.
+
+El método, basado en los cuatro índices tenidos de forma independiente, sigue el siguiente conjunto de criterios para la _identificación_ de agrupamientos, dicho en otros términos, un municipio será parte de un agrupamiento si cumple con las siguientes condiciones:
+
+* Primero, identificar aquellos municipios que para cada actividad tuvieran un IHH positivo.   
+* Segundo, que dichos municipios tuvieran un coeficiente de localización mayor que 1 y  
+* Tercero, una participación relativa de al menos 0.005.
+
+Cuando para cada actividad, un municipio cumpla con este criterio, se considerará parte de un agrupamiento. Finalmente, se calculó el índice de Gini para cada actividad, pero no se utilizó como criterio en la definición de los agrupamientos.
+
+@GarciaCastro2009
+
+En línea con el trabajo de @GarciaCastro2008, en el trabajo de @GarciaCastro2009 se sigue la misma ruta metodológica, si bien aquí sí se proporciona una definición explícita de qué se entiende por agrupamiento productivo local. A la letra es definido como "espacios de producción sectorialmente  y  localmente  compartidos  en  los  que  se  establecen  relaciones fuertes  entre  los  agentes  que  en  ellos  participan;  en  ellos  se  generan sinergias  que  propician  la  obtención  de  ventajas  competitivas  y  favorecen el aprendizaje colectivo" (p. 59). Esta definición, si bien ahora explícita, en realidad está en línea con la idea del distrito industrial Marshalliano de "libro de texto" que priviene de la experiencia italiana.
+
+Los autores sostienen que su enfoque metodológico "tiene como principal contribución detectar y clasificar actividades económicas relevantes en espacios físicos determinados" (p. 65). Sin embargo, reconocen que el uso de los indicadores de concentración de su propuesta metodológica es a penas el primer paso para la identificación efectiva de APL, en el sentido por ellos entendido, ya que la propuesta basada en índices hace énfasis sólo en los aspectos económicos y no en los aspectos institucionales. 
+
+
+**4. Revisión de literatura teórica**
+
+@Gallaud2013encyclopedia: entornos innovadores
+
+El fenómeno de la concentración espacial de la actividad económica suele ser referido a partir de diferentes categorías: sistema productivo local, cluster regional, sistema de innovación regional, entorno innovador (*innovative milieux*), entre otros. [@Gallaud2013encyclopedia].
+
+El "entorno innovador" tiene tres características, a decir de [@Gallaud2013encyclopedia, 1053]: 
+
+(1) un sistema productivo que incluye actividades diversas y diversificadas, actividades productivas y actividades de servicio; (2) un mercado de trabajo local con un tiempo de trabajo que corresponde a la especialización productiva del medio y un sistema de capacitación e investigación que contribuye también a la especialización productiva; y (3) una dinámica de interacción y aprendizaje.
+
+En este sentido, el rasgo 1 es el que se aproxima a lo que interesa respecto a la base económica. Por otro lado, el entorno innovador incluye un componente espacial físico: proximidad geográfica, que motivaría (junto con otros factores) los procesos mismos de innovación [@Gallaud2013encyclopedia, 1053, p. 1054]. 
+
+"Los entornos innovadores favorecen el emprendimiento combinando tres tipos de proximidades: la proximidad geográfica (las distancias entre los actores ubicados en los entornos son pequeñas), la proximidad organizada (las redes entre los actores ubicados en el entorno hacen que los entornos funcionen) y la proximidad cognitiva (los actores comparten conocimientos profesionales, organizacionales e incluso culturales). Su interacción conduce al establecimiento de normas de regulación compartidas entre ellos)" ([@Gallaud2013encyclopedia, 1054]).
+
+_Papel de las grandes empresas en los entornos innovadores_
+
+La autora señala un aspecto particularmente relevante en relación con nuestra concepción sobre la dinámica económica: el papel de las grandes empresas sobre los entornos regionales y, particularmente, sobre la innovación. Ella señala que el papel de la gran empresa es ambivalente. De modo que: 
+
+"las grandes empresas pueden favorecer las nuevas organizaciones, creando efectos sobre el entorno local, ya que pueden desestructurar el tejido industrial. Las grandes empresas pueden favorecer los efectos positivos, pero el medio local funcionará bien sólo si estas grandes empresas permiten la interacción local entre los nuevos establecimientos yotras organizaciones del medio. Además, el medio innovador sobrevivirá sólo mientras las grandes empresas se interesen por las interacciones locales y estén convencidas de la eficiencia de los efectos indirectos geográficos locales. Por el contrario, las grandes empresas que impiden que su planta local interactúe localmente contribuirán a limitar el desarrollo del medio. Las grandes empresas que están ubicadas fuera del medio también pueden contribuir al mal funcionamiento comprando las empresas locales y usándolas en una estrategia global y no local ([@Gallaud2013encyclopedia, 1053, p. 1055]).
+
+Algunos de los elementos no resueltos o limitantes del enfoque del entorno innovador son: i) el hecho de que no definen una extensión territoriral específica para el _mileauaux_, es decir, no define una distancia para los ejectos de interacción,ii) un entorno innovador se caracteriza por dos dinámicas, una de interacción y otra de aprendizaje, éste último es muy complejo de observar pero resulta vital para el sostenimiento y evolución del entorno innovador, iii) la creación de un entorno competitivo que disuelva la presencia del entorno innovador.
+
+Uno de los elementos centrales de la "teoría del entorno innovador" es que "se enfoca en la habilidad endógena de un territorio para generar factores de desarrollo" ([@Gallaud2013encyclopedia, 1053, p. 1057])
+
+[Garofoli2020encyclopedia]: desarrollo local
+
+Esta entrada de la enciclopedia provee un glosario donde se busca distinguir entre una serie de conceptos que están estrechamente vinculados y que a veces se usan de forma indistinta para referirse a los aspectos de concentración espacial de la actividad económica: desarrollo endógeno, economías externas, modelo de los polos de crecimiento, distrito industrial, sistema productivo local y entorno innovador. Si bien las diferencias pueden ir desde sutilezas hasta concepciones muy diferentes, todas ellas refieren al menos dos elementos: concentración de la actividad económica y sus vínculos con el desarrollo.
+
+El origen de los enfoques centrados en el desarrollo local que surgen en la década de los ochenta se sustenta, a decir del autor, en el agotamiento del modelo de polos de crecimiento de Perroux basados en la presencia de una gran empresa impulsora. La transición a lo que nosotros denominamos modelo neoliberal, en términos regionales a nivel internacional significó "tanto el papel de las variables sociales y culturales como las _nuevas formas de regulación social_. Las nuevas regiones industriales suelen ser la consecuencia de un proceso dialéctico entre las oportunidades de mercado, la movilización de los recursos existentes (a menudo en desuso o mal utilizados), el conocimiento y el aprendizaje, y las _nuevas formas de organización de la producción_" ([@Garofoli2020encyclopedia: 200]).
+
+
+Pregunta de reflexión:
+*  ¿cómo es posible insertar los cambios de tendencia que van del fordismo/taylorismo clásicos a la producción flexible de los setenta en las dinámicas de carácter regional?  
+* ¿Cómo la productividad de las economías de escala resultado del modelo fordista/taylorista clásicos pueden ser suplidos por una aglomeración de pequeñas o medinas empresas?  
+* ¿Efectivamente ha habido cambios en el entorno social e institucional que hacen más relevantes estos aspectos en los procesos de desarrollo regional y en el éxito o fracaso de proyectos económicos o sólo es que ahora se fija la atención en factores que siempre han sido relevantes pero que se daban, teóricamente, por sentados?  
+
+
+Así pues, los **Modelos organizacionales de producción territorialmente anclados** están basados en dos aspectos:
+
+i) Una base económica dada por el sistema de producción, las relaciones entre empresas y la división social del trabajo y  
+ii) La base social institucional que determina la forma específica de producción.  
+
+
+No obstante, la delimitación territorial de este "complejo" parece, con la definición anterior, ambigüa; más aún, no considera que la base económica puede estar fragmentada en diferentes territorios y que, por tanto, requiere un análisis detallado.
+
+
+Estos "enfoques alternativos" al modelo industrial-polo de Perroux sostienen que pueden ser empresas de menor tamaño y no necesariamente del sector indsutrial las que generen desarrollo. Sin embargo, este "cambio de tendencia" no puede pasar de largo en el sentido de que implica también el retorno al pensamiento noclásico que no atribuye a la industria un papel preponderante o privilegiado para el crecimiento. 
+
+Es en el territorio donde se expresa de forma concreta la complejidad de los procesos sociales. Para el caso de lo que llamamos desarrollo, éste "es siempre simultáneamente un proceso de reestructuración territorial, es decir, asume, en figuras y formas muy diferentes, una complexión geográfica. Una de las expresiones más importantes de este vínculo entre territorio y desarrollo consiste en _densas aglomeraciones regionales de empresas y trabajadores_" ([@Garofoli2020encyclopedia]).
+
+Una propuesta teórica para comprender este fenómeno es justamente la de los Sistemas Productivos Locales (APLs) que "se puede generalizar a cualquier modelo organizativo de la actividad económica arraigado en el espacio geográfico y basado en la presencia de _economías externas_, _recursos específicos_, conocimientos tácitos y _mecanismos de regulación social_" ([@Garofoli2020encyclopedia: 202]).
+
+Un elemento sobre la actividad económica aglomerada se vincula con la innovación: "el agrupamiento y la especialización de las empresas son bases fundamentales de la competitividad y la innovación, y la región es un verdadero nexo de desarrollo económico", es decir, el entorno de competenica y cooperación, así como los vínculos materiales entre los actores genera inventivos para la innovación. En esta perspectiva teórica (del desarrollo local y los APL´s) hay una triada de elementos interrelacionados: proximidad geográfica, especialización e innovación. Pero, ¿de qué modo se dan estos vínculos y relaciones? Para comprender esto es indispensable pensar en _la base económica_ dada por los interrelacioanmientos insumo-producto que dan sentido a las relaciones.
+
+Del documento se destacan las definiciones iniciales y el contexto histórico del surgimiento de la idea de desarrollo local como respuesta a los cambios de tendencia que trajo el neoliberalismo y los cambios en las formas de producción.
+
+
+[@TripplBergman2021]: clustets, local districts and innovative milieux
+
+Esta serie de conceptos surgen para tratar de explicar como, con el cambio en la tendencia de crecimiento mundial en la economías centrales durante el ascenso del neoliberalismo, algunas regiones mostraban una dinámica opuesta. Los autores se proponen discutir dichos conceptos para identificar sus semejanzas y diferencias. Son de su particular interés los conceptos de distritos industriles mashallianos y neomarshallianos, entornos innovadores (innovative miliuex) y clusters industriales.
+
+Los autores señalan conceptos familiares como *Economías externas de escala* que surgen de la localización común de empresas que tiene como resultado impulsar el crecimiento gracias a la reducción de costos y al flujo de información. Este tipo de economías son externas a la empresa pero internas a la _región_ y pueden ser dividas en economías de localización cuando las empresas del caso son del mismo sector y economías de urbanización cuando son empresas de sectores diferentes.
+
+Para los autores, los tres conceptos que utilizan expresan un interés común: tratar de explicar el crecimiento de regiones en medio de un declive general, por un lado, y por otro, incorporar aspectos más allá de los elementos de carácter puramente económico centrados en las economías de escala externas.
+
+a. Los conceptos marshallianos
+
+Marshall, padre del concepto de distrito industrial. Marshall refiere que la clave del concepto de industrias localizadas, es decir, industrias que se concentran en ciertas localidades, es el surgimiento de economías de escala externas que permiten que las unidades económicas pequeñas tengan ventajas que incrementan su productividad.
+
+Causas, desde la perspectiva de Marshall, para la localización inicial de una industria: disponibilidad de materias primas, demanda de bienes de alta calidad o mano de obra especializada. Una vez instalada la industria, hay factores que la anclan, dichos factores son las ventajas dadas por las economías de externas a escala: i) derramas de conocimiento, ii) crecimiento de industrias provedoras, iii) efectos del mercado de trabajo.
+
+El concepto marshalliado de concentración espacial se refiere explícitamente, segpun los autores, a empresas de "tamaño moderado". En este sentido "Según Marshall, la concentración espacial de empresas de tamaño moderado en distritos fue un **fenómeno generalizado** -era la forma típica de organización industrial- de la economía inglesa a fines del siglo XIX, es decir, un fenómeno que podía observarse en muchas industrias y sectores diferentes. no solo unos pocos" ([@TripplBergman2021: 442]).
+
+Idea:
+Esta consideración hace necesario que los efectos de estas economías externas de escala sean buscados y evaluados distinguiendo entre tamaño de empresa.
+
+El entramado de razones que motivan la localización conjunta de empresas tiene como consecuencia el surgimiento de un _entorno innovador_ al que no sólo se explica a través de elementos puramente económicos, sino de carácter institucional y sociocultural que sintetiza en la "atmosfera industrial" generada en dicha concentración.
+
+
+
+Ideas sobre conceptos
+
+Cada uno de ellos resalta aspectos particulares del complejo entramado de relaciones que se sucenden en el espacio concreto: interrelaciones entre sectores y unidades económicas dados por los vínculos insumo-producto, o bien, relaciones a través de aspectos institucionales explícitos o implícitos que refieren conductas sociales apreciadas o sancionadas, además de conexiones entre los sistemas políticos y sociales.
+
+La atención sobre estos espacios de concentración de la actividad económica tiene su origen en los efectos positivos que tiene sobre el desempeño de las unidades económicas vinculadas, directa o indirectamente, a estos espacios; además de las consecuencias favorables que tienen sobre el agregado económico a través del impulso al crecimiento y, potencialmente, sobre el desarrollo (**citas**). Estos factores positivos usualmente son teorizados a través las economías externas de aglomeración.
+
+Éstas pueden ser divididas en economías de localización y economías de urbanización. Las primeras tienen su origen en la interacción de actividades de un mismo sector que atrae trabajadores especializados, proveedores y facilita el acceso y difusión del conocimiento (externalidades tipo Marshall-Arrow-Romer. En tanto, las segundas surgen en espacios donde predomina una amplia variedad de actividades económicas (externalidades tipo Jacob) (**citas**).
+
+
+
+El resto del trabajo se estructura en X apartados, en el primero se lleva a cabo un análisis minucioso sobre las diversas concepciones teóricas sobre el fenómeno de aglomeración espacial de la actividad, tratando de distinguir con precisión entre los aspectos que dan soporte al relacionamiento materiales entre unidades económicas en el espacio y los aspectos de tipo circulatorio e institucional, en el segundo se presenta una revisión de los trabajos empíricos para México y el mundo que tratan sobre dos aspectos: i) la identificación de *complejos industriales* basados en las técnicas de conglomerados y análisis de redes y ii) la relación entre la productividad laboral de los complejos industriales regionales y su especialización/concentración, en la sección 3 se describe el enfoque metodológico seguido en este trabajo para la identificación de complejos industriales basado en el análisis de conglomerados propuesto por [@Feser2000] y el enfoque econométrico espacial para indagar en la relación entre productividad y economías de aglomeración desde una perspectiva espacial, la sección 4 presenta y analiza los resultados obtenidos, en tanto, en la última, se presentan las consideraciones finales, limitantes y posibles extensiones futuras de este trabajo, así como las medidas de política económica que de este trabajo se pueden desprender.
+
+
+
+
+
+
+Características de los estudios base para definir sus deficiencias
+
+@MendozaVelazquez2017: idetifican clusters con la perspectiva porteriana. Estudia la relación entre especialización, competencia y diversidad sobre el crecimiento del empleo en los cluster indentificados.
+
+@LagunaReyes2010: identifican complejos industriales usando una MIP de 1996 no oficial para "analizar la estructra y desempeño de los encadenamientos productivos detectados" (p. 121)
+
+@GonzalezVillareal2017: identifican complejos industriales (base económica del cluster). Usa información de la MIP 2003 y de los CE 2009. Una vez indentificados los clusters, llevan a cabo su espacialización a través de la estimación de coeficientes de correlación espacial sobre los errores de una regresión del empleo total sobre el empleo del sector para hallar agrupaciones alto alto.
+
+@TrejoNieto2018: identifica agrupamientos para el centro de México con una MIP regional de 2003 elaborada por Ibarra y Negrete, 2015 (citado por @TrejoNieto2018). 
+
+
+
+## Notas método cluster
+
+[Ejemplo de análisis PCA](https://www.youtube.com/watch?v=0Jp4gsfOLMs&t=2s&ab_channel=StatQuestwithJoshStarmer)
+
+#Base de datos creada
+
+data.matrix <- matrix(nrow=100, ncol=10)
+colnames(data.matrix) <- c(paste("wt", 1:5, sep=""), paste("ko", 1:5, sep=""))
+rownames(data.matrix) <- paste("gene", 1:100, sep="")
+for (i in 1:100) {
+  wt.values <- rpois(5, lambda=sample(x=10:1000, size=1))
+  ko.values <- rpois(5, lambda=sample(x=10:1000, size=1))
+  
+  data.matrix[i,] <- c(wt.values, ko.values)
+}
+
+head(data.matrix)
+dim(data.matrix)
+
+#Las columnas de la base de datos son muestras y las filas son genes. Lo que interesa saber de dicha base de
+#datos es cómo las muestras están relacionadas entre sí.
+
+
+# El análisis PCA se hace con
+pca <- prcomp(t(data.matrix), scale=TRUE)
+
+# Hay que notar que la base de datos se traspone (con la función t()) puesto que prcomp() devuelve
+#la relación entre los elementos que aparecen en las filas, por lo que si se deja como originalmente se
+#tiene, entonces, se obtendrá la relación entre los genes y no entre las muestras, que es lo deseado.
+
+#La función prcomp()devuelve tres elementos:
+
+#1) X: contiene los componentes principales (las combinaciones lineales de las variables). Los valores
+# de este elemento nos permitirán hacer una gráfica bidimencional (bi-plot) para tener una representación de todas
+#las variables pero "sintetizada" o "reducida en sus dimensiones". 
+#2) sdev: corresponde a la desviación estándar de los componentes calculados. Sirve, cuando la elevamos 
+#al cuadrado, para conocer qué porcentaje de la variación de los datos originales es captada por cada
+#componente
+#3) rotation: almacena las cargas (loading scores). Hay una carga para cada componente principal y para cada observación.
+#Las cargas #sirven para determinar qué genes tienen el efecto más grande sobre las muestras que son graficadas.
+
+
+
+#Una vez que se tienen los PC, lo usual es graficar los dos primeros que, como se dijo, están en el elemento
+#`x`, es decir, hacer una biplot para observar cómo están agrupadas las muestras
+plot(pca$x[,1], pca$x[,2])
+
+#Entonces, lo que se grafica es PC1 (el primer componente) y PC2 (la segunda componente). A través de este
+#gráfico es posible observar qué muestras se parecen más entre sí: aquellas que estén más próximas y que
+#formen un agrupamiento o clúster.
+
+#Ahora, con la desviación estándar al cuadrado (que da los eigenvalores), veremos qué porcentaje de la variación de los
+#datos originales es captada por cada componente y lo hacemos mediante el gráfico de sedimentación:
+## make a scree plot
+pca.var <- pca$sdev^2
+
+barplot(pca.var.per, main="Gráfico de sedimentación",
+        xlab="Componente principal",
+        ylab="Porcentaje de variación")
+
+# Como se puede ver, el primer componente explica más del 90% de la variación de los datos. La lectura de
+#esta gráfica con la anterior permite sostener que, en efecto, los dos grupos identificados son sustantiva-
+#mente diferentes pues, con la primera y segunda componente, se captura cerca del 95% de la variación de
+#los datos.
+
+#Alternativamente, la misma gráfica se puede hacer con ggplot2. Primero, se debe tener la información
+# a graficar en un formato adecuado para este paquete:
+
+pca.data <- data.frame(Sample=rownames(pca$x),
+                       X=pca$x[,1],
+                       Y=pca$x[,2])
+pca.data
+
+library(ggplot2)
+ggplot(data=pca.data, aes(x=X, y=Y, label=Sample)) +
+  geom_text() +
+  xlab(paste("PC1 - ", pca.var.per[1], "%", sep="")) +
+  ylab(paste("PC2 - ", pca.var.per[2], "%", sep="")) +
+  theme_bw() +
+  ggtitle("Gráfico de componentes principales")
+
+
+#Finalmente, se usarán las cargas para determinar cuáles son los genes que, en el primer componente, tienen
+# el efecto más grande sobre las muestras que son graficadas, es decir, queremos saber cuáles son los genes
+#que tienen las cargas más altas en términos absolutos.
+
+## get the name of the top 10 measurements (genes) that contribute most to pc1.
+loading_scores <- pca$rotation[,1]
+gene_scores <- abs(loading_scores) ## get the magnitudes
+gene_score_ranked <- sort(gene_scores, decreasing=TRUE)
+top_10_genes <- names(gene_score_ranked[1:10])
+
+top_10_genes ## show the names of the top 10 genes
+
+pca$rotation[top_10_genes,1] ## show the scores (and +/- sign)
+
+
+
+## Otras notas método cluster
+
+## Aspectos metodológicos basados en Feser y Bergman (2000)
+
+La exposición metodológica de este autor sobre el método de Feser y Bergman (2000) arroja información adicional sobre el proceso a seguir:
+
+i) A partir de la MIP, hacer una "estandarización", es decir, construir los coeficientes citados previamente, aunque aquí introduce una distinción en términos de con qué denominador se construirá cada coeficiente: la suma interinsdutrial de compras/ventas o bien el total de compras/ventas de la economía.
+
+ii) El segundo paso es construir una matriz de correlación que recoja los valores máximos entre cada matriz con los coeficientes.
+
+iii) Sobre dicha matriz se aplicará el análisis factorial y "una vez que se extraen los factores se puede determinar la composición de cada cadena de valor. Para ello se utilizan las correlaciones entre cada industria con cada factor, las cuales se representan en una matriz de coeficientes de asociación o loadings. De acuerdo con este proceso, una industria puede pertenecer a más de un conglomerado, por lo que los agrupamientos construidos de este modo no son excluyentes entre sí" (p. 130).
+
+
+- Identificación de clusters "nacionales" a través de las relaciones interindustriales
+
+Si bien se piensa, la matriz de insumo-producto puede ser vista como un instrumento que muestra la cercanía o semejanza entre los elementos que la componen, en este caso sectores de actividad: entre más "cerca" o "semejante" sea un sector de otro, dichos sectores integrarán un cluster de actividad.
+
+A partir de esta idea, la cercanía o semejanza entre sectores puede ser analizada a través de múltiples métodos, como por ejemplo: la  teoría de grafos, teoría de redes, métodos de tringulación o análisis factorial a través de componentes principales.
+
+Así, de forma intuitiva,  todos estos métodos buscan identificar entre qué elementos se dan las relaciones más fuertes, relaciones entre sectores que dan la idea de agrupamientos sectoriales o "clusters". Será pues vital estudiar con cuidado este tipo de técnicas para contar con instrumentos adecuados para el análisis de las relaciones entre sectores.
+
+
+El clásico estudio de Feser y Bergman (2000) ilustra el uso del análisis factorial por componentes principales para la identificación de clusters en dos grandes pasos:
+
+1. Cuatro coeficientes que muestran, a través de su correlación, la interrelación entre sectores de actividad.
+2. Uso de componentes principales para identificar clusteres a partir de ubicar entre qué sectores se da la relación más estrecha.
+
+En la primera parte del método, los vínculos directos e indirectos entre los sectores son captadas a partir de la correlación entre cuatro índices que dan cuenta de los intercambios interindustriales para cada sector. Luego, con esta información se lleva a cabo un análisis de componentes principales para para obtener los factores mismos que luego son rotados a través de _varimax_ para tratar de lograr una interpretación más adecuada. La decisión en torno al número de factores rotados seleccionados y que terminarán formando los clusters es hecho a través de tres elementos: i) la proporción relativa de varianza explicada por cada componente, ii) el tamaño de los eigenvalores y iii) gráfico de sedimentación.[@Feser2000: p. 4].
+
+Como resultado del análisis por componentes principales, se obtienen no sólo cada uno de los componentes, sino también los pesos o ponderadores con base en los cuales se realiza la combinación lineal que da como resultado dichos componentes. Estos ponderadores o pesos reciben en nombre de _loadings_ en inglés, que podríamos traducir como cargas. Cada carga describe qué tanto cada variable (en este caso, la correlación entre pares de sectores) contribuye a una componente en particular.
+
+
+### Una nota sobre componetes principales con *singular value decomposition, SVD*
+
+Cuando se tienen dos variables, el **primer componente principal** (PC1) es la línea que se ajusta mejor al conjunto de datos y es aquella cuya suma de los cuadrados de las distancias es más alta (PC1).
+
+Cuando se lleva a cabo al análisis por componentes principales a través de SVD, hay que reescalar el PC1 para que sea unitario. Esto nos lleva al concepto de **Eigenvector** o **vector singular**, que es el vector de longitud 1 que es una combinación lineal (componente principal) de las variables. En tanto, las **cargas** (*loading scores*) son las proporciones reescaladas en las que las variables involucradas forman la combinación lineal (componente principal): mientras más grande es la carga de una variable dicha variable es la que más contribuye a explicar la componente. El conjunto de cargas para cada componente integra el denominado eigenvector, que proporciona un valor para cada variable. Dichos valores son los coeficientes mediante los cuales las variables (estandarizadas) deben ser multiplicadas para construir cada componente (manual GeoDa)
+
+Por su parte, el eigenvalores de la componente principal es la suma de los cuadros de las distancias del mejor ajuste lineal, en tanto, su valor singular/propio es la raíz cuadrada del eigenvalor (que es también su desviación estándar).
+
+La segunda componente principal es la recta a través del origen que es perpendicular a la primer componente principal.
+
+Finalmente, al dividir los eigenvalores de cada componente entre n-1 (tamaño de la muestra, menos 1), se obtiene la **variación de cada componente**, a partir de la cuál se puede obtener la variación proporcional, una vez que se conoce la variación total.
+
+
+Técnica estadística que es usada para reducir el número de "dimensiones" del conjunto de datos utilizados."Su objetivo es remplazar un número grande de variables que están correlacionadas entre sí, por un número menor de variables que no estén relacionadas entre ellas" (Video)
+
+Una explicación clara y sintética de la técnica de componentes principales es la desarrollada por [Steven Holland](https://geology.uga.edu/directory/people/steven-holland) en sus [notas de clase](http://strata.uga.edu/8370/lecturenotes/principalComponents.html#:~:text=Positive%20loadings%20indicate%20a%20variable,effect%20on%20that%20principal%20component.) sobre componentes principales y otras tantas herramientas estadísticas para las geociencias.
+
+Se siguen aquí sus notas para llevar a cabo dicho análisis.
+
+Para cargar la base de datos:
+```{r}
+#Cargar la base de datos
+nashville<- read.csv("~/Proyectos académicos/1. UAM/6. Formación/PCA/NashvilleCarbonates.csv")
+#Mostrar los nombres de las columnas
+colnames(nashville)
+#Crear un nuevo arreglo de datos con las columnas de la 2 a la 9.
+geochem <- nashville[ , 2:9]
+#Calcular el logaritmo base 10 de la base en las columnas de la 4 a la 8.
+geochem[ , 4:8] <- log10(geochem[ , 4:8])
+```
+
+La ejecución del PCA es con la función `prcomp()` y se procede como:
+
+```{r}
+#Genera un objeto de tipo prcomp que contiene los resultados del PCA
+geochemPca <- prcomp(geochem, scale.=TRUE)
+#Del objeto anterior, almacena la desviación estándar en un objeto independiente.
+sd <- geochemPca$sdev
+#Almacena las cargas o "ponderadores" en un objeto diferente
+loadings <- geochemPca$rotation
+#Asigna nombres a las filas a partir de las columnas del objeto que contiene la base a la que se aplicó PCA
+rownames(loadings) <- colnames(geochem)
+#Las combinaciones lineales resultantes
+scores <- geochemPca$x
+
+```
+
+El objetivo del análisis de PCA es la reducción de dimensiones, es decir, pasar de un número "grande" de variables a uno menor, sin perder la riqueza informativa, es decir, sin perder la variabilidad de los datos originales. Por tanto, la interpretación de los resultados primero concierne al número de componentes que hay que analizar: si hay 10 variables y cada variable lleva asociado un componente, cuáles de dichos componentes son los más relevantes.
+
+Para ello, un primer método es a través del análisis del porcentaje de varianza que cada componente explica representado en una gráfica gráfica de barras:
+
+```{r}
+#Eleva al cuadrado la desviación estandar previamente obtenida para generar la varianza
+var <- sd^2
+#Genera un objeto que contiene el porcentaje de varianza de cada componente
+varPercent <- var/sum(var) * 100
+#Función que permite controlar múltiples gráficas
+dev.new()
+#Gráfica de barras que gráfica el porcentaje de varianza
+barplot(varPercent, 
+        xlab='PC', 
+        ylab='Percent Variance', 
+        names.arg=1:length(varPercent), 
+        las=1, 
+        ylim=c(0, max(varPercent)), 
+        col='gray')
+#Añade una línea horizontal de color rojo en 12.5 (inverso del número de variables=8 por 100)
+abline(h=1/ncol(geochem)*100, col='red')
+```
+
+Esta gráfica de barras es lo que se denomina *gráfico de sedimentación* o _screeplot_. De igualmanera, es posible obtenerla de forma directa con la función `plot()`:
+
+```{r}
+plot(geochemPca, type="l")
+```
+Lo que es posible observar es que los dos primeros componentes explican un porcentaje importante de la variabilidad de nuestros datos, por tanto, sobre ellos debería enfocarse el análisis, en tanto, el resto pueden ser descartados. Sin embargo, otro de los criterios para incluir determinado número de componentes es "que debemos considerar es qué componentes principales explican el valor de información de más de una variable" (Holland, 2022). En el ejemplo hay 8 variables, eso implica que proporcinalmente cada variable debería explicar el 12.5% de la variabilidad de nuestros datos. En la primera gráfica, ese pocentaje es mostrado con la línea roja que abarca hasta el tercer componente, por lo que éste debería ser considerado también, según este criterio.
+
+Usualmente cuando se reportan los datos del análisis PCA, se reporta el porcentaje de variabilidad explicado por cada componente, además de la suma total de variabilidad explicada por el conjunto de componentes elegidos:
+```{r}
+varPercent[1:3]
+sum(varPercent[1:3])
+```
+
+El siguiente elemento a interpretar es el relacionado con la importancia de cada variable en cada uno de los componentes calculados, información que es proporcionada por los ponderadores o cargas ( _loadings_). ¿Qué tan grande o pequeño es un ponderador o carga? Feser y Bergman (2000) sostienen que un ponderador será importante para la explicación del componente si es mayor a 0.5 en términos absolutos. En tanto, el autor de las notas que seguimos aquí refiere que una carga será grande cuando, proporcionalmente, explique al menos su valor propocional de la varianza al cuadrado:
+
+```{r}
+#Coeficientes de los pesos o cargas
+loadings
+#Cuadrado del valor proporcional de la varianza como umbral de importancia
+sqrt(1/ncol(geochem))
+```
+
+Dicho en otros términos, cuando el coeficiente/carga sea mayor a 0.353 en términos absolutos, será un coeficente "importante", en este ejemplo concreto. Corresponderá buscar la forma adecuada de interpretar cada una de las cargas más importantes en el contexto de análisis. 
+
+Por ejemplo, para el caso de Feser y Bergman (2000) la interpretación de los factores y sus pesos que resultarán en la delimitación de los cluster busca "reconciliar varios objetivos contrapuestos" ([@Feser2000]):
+
+1. Identificar, mediante la magnitud de las cargas, los vínculos más estrechos de cada cluster, con independencia de si dicho sector está también vinculado estrechamente a otros cluster.
+2. Identificar, en la medida de lo posible, un conjunto de clusters mutuamente excluyentes, de modo que cada sector esté asignado a un solo cluster.
+3. Investigar los vínculos tanto entre clusteres como al interior de cada cluster.
+
+En el caso de @Feser2000, cada cluster está formado de industrias "primarias" y "secundarias". Las industrias primarias para un cluster están compuestas por aquellos sectores que "alcanzaron sus máximas cargas en aquel factor y que, simultaneamente, obtuvieron una carga mayor a 0.6" (p. 5). En tanto, una industria secundaria es aquella que, para un cluster dado, alcanzaron cargas, dentro de un cluster, de al menos 0.35 pero menores a 0.6. 
+
+
+Finalmente, dentro del análisis por componentes principales, se recurre a la gráfica de distancia conjunta ( _distance biplot_) y puede ser construirda para cada par de componentes. Lo usual es comenzar con los dos primeros:
+
+```{r}
+dev.new(height=7, width=7)
+biplot(scores[, 1:2], loadings[, 1:2], cex=0.7)
+```
+
+
+
+## Desarrollo del método de la identificación de complejos industriales
+
+### Obtención de los errores del modelo de regresión
+
+Los paquetes utilizados son:
+
+```{r include=FALSE}
+library(sf)
+library(rgeoda)
+library(tidyverse)
+```
+
+La base de datos que contiene la información del empleo total y empleo por cadena de las 9 cadenas productivas identificadas con la MIP de 2013 es cargada con:
+
+```{r}
+# Base geográfica municipal
+mun <- sf::st_read("Bases de datos/shp_R/cluster_mun.shp")
+# Base geográfica estatal, sólo para la representación en mapas
+ent <- sf::st_read("Bases de datos/ent/00ent.shp")
+```
+
+Una vez cargada la base de datos espacial, `mun`, se estima una regresión del empleo total de cada municipio (`po`) sobre el empleo en el municipio de una de las cadenas identificadas. Para este ejemplo, el modelo se estima para la cadena metalmecánica (`pocl3`):
+
+```{r}
+mcl3 <- lm(data = mun, formula = po ~ pocl3)
+```
+
+Luego, se guardan los errores en una nueva variable, `res_cl3` y se incorporan a la base original:
+
+```{r}
+res_cl3<- mcl3[["residuals"]]
+mun<-res_cl3 %>% cbind(mun)
+colnames(mun)[1]<-'res_cl3'
+mun <- mun %>% dplyr::select(CVEGEO, CVE_ENT, CVE_MUN, NOMGEO, po, res_cl3, geometry)
+```
+
+### Cálculo del estadístico de asociación espacial
+
+Una vez que se tienen los errores de la regresión guardados como nueva variable en la base de datos original, se computa el estadístico $I_i$ con dicha variable, usando la estructura espacial indicada en la sección anterior (`q_1`).
+
+```{r}
+#Definición de la estructura espacial
+q_1 <- rgeoda::queen_weights(mun)
+#Crea un objeto de tipo LISA con la estructura espacial definida que contiene el estatistico Ii
+Icl3 <- local_moran(w=q_1, df=mun["res_cl3"])
+```
+
+De acuerdo con el método, los municipios que integran los complejos industriales  de cada cadena productiva identificada son aquellos cuyo valor del indicador local de asociación espacial de Moran, $I_i$, es estadísticamente significativo al 5% y que además forman parte del agrupamiento Alto-Alto. Dichos municipios aparecen en el siguiente mapa de agrupamientos, junto con los municipios de las otras categorías. 
+
+```{r}
+### Mapa de cluster
+
+#### Preliminares
+##### Colores de cada unidad espacial según su categoría
+lisa_colores <- rgeoda::lisa_colors(Icl3)
+##### Etiquetas para cada categoría
+lisa_etiq <- lisa_labels(Icl3)
+##### Extracción de los valores que definen cada cluster con un 5% de significancia
+lisa_clusters <- rgeoda::lisa_clusters(Icl3,cutoff = 0.05)
+#### Construcción mapa de cluster con sf
+plot(sf::st_geometry(mun), 
+     col=sapply(lisa_clusters, function(x){return(lisa_colores[[x+1]])}), 
+     border = "#333333", lwd=0.1)
+title(main = "I Local de la metalmecánica")
+legend('bottomleft', legend = lisa_etiq, fill = lisa_colores, border = "#eeeeee")
+
+```
+
+Además, es usual presentar los resultados del mapa de agrupamientos junto con el llamado mapa de significancia, que muestra la signficancia individual de cada municipio en diferentes niveles:
+
+
+```{r}
+### Mapa de significancia
+#### Preliminares
+#### Extracción de los valores p asociados a cada observación
+lisa_p <- lisa_pvalues(Icl3)
+#### Definición de las etiquetas de cada grupo de valores p
+p_labels <- c("Not significant", "p <= 0.05", "p <= 0.01", "p <= 0.001")
+#### Definición de los colores de cada grupo de valores p
+p_colors <- c("#eeeeee", "#84f576", "#53c53c", "#348124")
+# Mapa de significancia: construcción
+plot(st_geometry(mun), 
+     col=sapply(lisa_p, function(x){
+       if (x <= 0.001) return(p_colors[4])
+       else if (x <= 0.01) return(p_colors[3])
+       else if (x <= 0.05) return (p_colors[2])
+       else return(p_colors[1])
+       }), 
+     border = "#333333", lwd=0.2)
+title(main = "Moran Local para la cadena metalmecánica")
+legend('bottomleft', legend = p_labels, fill = p_colors, border = "#eeeeee")
+```
+
+
+### Código a cambiar para cada complejo
+
+```{r}
+mun <- sf::st_read("Bases de datos/shp_R/cluster_mun.shp")
+mcl20 <- lm(data = mun, formula = po ~ pocl20)
+```
+
+```{r}
+res_cl20<- mcl20[["residuals"]]
+mun<-res_cl20 %>% cbind(mun)
+colnames(mun)[1]<-'res_cl20'
+mun <- mun %>% dplyr::select(CVEGEO, CVE_ENT, CVE_MUN, NOMGEO, po, res_cl20, geometry)
+```
+
+```{r}
+#Definición de la estructura espacial
+q_1 <- rgeoda::queen_weights(mun)
+#Crea un objeto de tipo LISA con la estructura espacial definida que contiene el estatistico Ii
+Icl20 <- local_moran(w=q_1, df=mun["res_cl20"])
+```
+
+```{r}
+### Mapa de cluster
+
+#### Preliminares
+##### Colores de cada unidad espacial según su categoría
+lisa_colores <- rgeoda::lisa_colors(Icl20)
+##### Etiquetas para cada categoría
+lisa_etiq <- lisa_labels(Icl20)
+##### Extracción de los valores que definen cada cluster con un 5% de significancia
+lisa_clusters <- rgeoda::lisa_clusters(Icl20,cutoff = 0.05)
+#### Construcción mapa de cluster con sf
+plot(sf::st_geometry(mun), 
+     col=sapply(lisa_clusters, function(x){return(lisa_colores[[x+1]])}), 
+     border = "#333333", lwd=0.1)
+title(main = "I Local de mubeles y productos de madera")
+legend('bottomleft', legend = lisa_etiq, fill = lisa_colores, border = "#eeeeee")
+```
+
+```{r}
+### Mapa de significancia
+#### Preliminares
+#### Extracción de los valores p asociados a cada observación
+lisa_p <- lisa_pvalues(Icl3)
+#### Definición de las etiquetas de cada grupo de valores p
+p_labels <- c("Not significant", "p <= 0.05", "p <= 0.01", "p <= 0.001")
+#### Definición de los colores de cada grupo de valores p
+p_colors <- c("#eeeeee", "#84f576", "#53c53c", "#348124")
+# Mapa de significancia: construcción
+plot(st_geometry(mun), 
+     col=sapply(lisa_p, function(x){
+       if (x <= 0.001) return(p_colors[4])
+       else if (x <= 0.01) return(p_colors[3])
+       else if (x <= 0.05) return (p_colors[2])
+       else return(p_colors[1])
+       }), 
+     border = "#333333", lwd=0.2)
+title(main = "Moran Local para la cadena metalmecánica")
+legend('bottomleft', legend = p_labels, fill = p_colors, border = "#eeeeee")
+```
+
