@@ -1,0 +1,723 @@
+---
+title: "Desarrollo del método para la construcción de complejos industriales regionales"
+author: "Jaime A. Prudencio-Vázquez"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    theme: cerulean
+    toc: yes
+    toc_float: true
+    highlight: pygments
+bibliography: Bibliografía/aglomeraciones.bib
+csl: Bibliografía/regional-science-and-urban-economics.csl
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE,message = FALSE)
+```
+
+En este documento se expone el desarrollo del método para la construcción de complejos industriales regionales utilizado por Prudencio [-@Prudencio2023]. El método se divide en dos grandes pasos. En el primero, se construyen cadenas productivas a partir de la Matriz de Insumo Producto de 2013 de INEGI [-@INEGI2018cn] con el enfoque de Feser y Bergman [-@Feser2000] que recurren al análisis de conglomerados con componentes principales. En el segundo, siguiendo a Feser et al. [-@Feser-etal2005] e incorporando las observaciones de Anselin [-@Anselin2020local2] se identifican las cadenas productivas a nivel municipal a través de índices de asociación espacial local que usan información del personal ocupado de INEGI [-@INEGIce2020].
+
+## Identificación de las cadenas productivas
+
+El objetivo es construir o identificar conjuntos de actividades económicas que, dada su similitud en sus patrones de compras y ventas intersectoriales, puedan ser considerados como cadenas productivas. Se recurre al procedimiento de Feser y Bergman [-@Feser2000]. La información utilizada corresponde la matriz de insumo producto de México de 2013 publicada por INEGI [-@INEGI2018cn]. 
+
+### Breve exposición del método
+
+La matriz de insumo producto (MIP) es un instrumento que permite conocer las relaciones intersectoriales entre las actividades económicas que se desarrollan en una economía nacional a través del registro de las compras y ventas que se suceden entre ellas [@INEGI2018cn]. 
+
+La MIP proporciona el valor monetario de los bienes vendidos por la actividad de la fila $i$ a la actividad de la columna $j$, $a_{ij}$, es decir, las ventas que realiza el sector $i$ al sector $j$. Sea $p$ y $s$ el valor del total de compras intermedias y ventas intermedias respectivamente; así, la relación entre cada par de actividades, $i$ y $j$ se puede sintetizar en cuatro coeficientes [@Feser2000, p. 6]:
+
+$$
+x_{ij}=\frac{a_{ij}}{p_j};\\
+x_{ji}=\frac{a_{ji}}{p_i};\\
+y_{ij}=\frac{a_{ij}}{s_j};\\
+y_{ji}=\frac{a_{ji}}{s_i}
+$$
+A la letra, Feser y Bergman (2000: 5) explican de este modo los coeficientes anteriores:
+
+"$x_{ij};x_{ji}$: compras de bienes intermedios  hechos por $j$ ($i$) a $i$ ($j$) como proporción del total de compras de bienes intermedios de $j$ ($i$). Un valor alto de $x_{ij}$, por ejemplo, sugiere que la industria $j$ depende de la industria $i$ como una fuente de una gran proporción del total de sus insumos intermedios.
+
+$y_{ij}; y_{ji}$: ventas de bienes intermedios de $i$ ($j$) a $j$ ($i$) como una proporción de las ventas totales de bienes intermedios de $i$ ($j$). Un valor alto de $y_{ij}$, por ejemplo, sugeriría que $i$ depende de la industria $j$ como mercado para una gran proporción de sus ventas totales de bienes intermedios".
+
+Los coeficentes anteriores se pueden sintetian en dos matrices: $X$ y $Y$, llamadas matriz de proporciones de compras y matriz de proporciones de ventas, respectivamente. Sobre las matrices $X$ y $Y$ se desarrolla un análisis de correlación que consiste en construir cuatro matrices cuyos elementos corresponden al grado de asociación entre pares de actividades, digamos $l$ y $m$. De nuevo siguiendo a la letra a Feser y Bergman (2000: 5):
+
+"$r(x_l\cdot x_m)$: mide el grado en que las industrias $l$ y $m$ tienen patrones similares de compra de insumos.
+
+$r(y_l\cdot y_m)$: mide el grado en que la industrias $l$ y $m$ presentan patrones de venta de productos similares, es decir, el grado en que venden bienes a una combinación similar de compradores de insumos intermedios.
+
+$r(x_l\cdot y_m)$: mide el grado en que el patrón de compra de la industria $l$ es similar al patrón de venta de la industria $m$, es decir, el grado en que la industria $l$ compra insumos de industrias a las que $m$ suministra.
+
+$r(y_l\cdot x_m)$: mide el grado en que el patrón de compra de la industria $m$ es similar al patrón de venta de la industria $l$, es decir, el grado en que la industria $m$ compra insumos de las industrias a las que $l$ suministra".
+
+Posteriormente, con las cuatro matrices obtenidas,se construye otra que contiene sólo los coeficientes de correlación más altos entre pares de actividades, dicha matriz da cuenta de las interacción más sólidas entre pares de actividades. Finalmente, para obtener los conjuntos que integran agrupamientos de actividades, se recurre al Análisis de Componentes Principales (PCA) a ésta última matriz. Como resultado y después de una cuidadosa observación, se obtienen agrupamientos de actividades que pueden ser definidos como cadenas productivas.
+
+### Desarrollo del procedimiento
+
+En esta sección se desarrolla el procedimiento anterior con información de la MIP de México para 2013 con información a nivel de rama de actividad, clasificada según el Sistema de Clasificación Industrial de América del Norte [@INEGI2018scian].
+
+Las librerías utilizadas y las funciones personalizadas son: 
+
+```{r}
+library(readxl)
+library(tidyverse)
+library(ggplot2)
+library(corrplot)
+library(psych)
+library(kableExtra)
+library(sf)
+library(rgeoda)
+library(tidyverse)
+source('Codigo/graficas.R')
+```
+
+La carga de la base de datos:
+
+```{r}
+mip_rama <- read_excel("Bases de datos/mip_rama.xlsx",
+                    sheet = "base_rama")
+```
+
+La matriz a nivel rama cuenta con una dimensión de `r dim(mip_rama)`, es decir, 263 filas y 266 columnas. De las columnas, se han excluido los elementos que corresponden a la demanda agregada (consumo privado, consumo de gobierno, formación bruta de capital fijo, exportaciones, importaciones y variación de existencias), aunque se han conservado el total de demanda intermedia (`di_tot`) y la utilización de la producción interna a precios básicos (`upipb`, que es la suma de la demanda intermedia y la demanda agregada). Además, el renglón final, `uetoni`, corresponde al usos de la economía total de origen nacional e importado (total de compras).
+
+Una vez cargada la información, se construirán las dos matrices que caracterizan los patrones de compras $X:x_{ij};x_{ji}$ y ventas $Y:y_{ij}; y_{ji}$. 
+
+La matriz con las proporciones de compras, $X$ se construye como:
+```{r}
+
+#Crea un arreglo de datos que une dos elementos
+X<- data.frame(mip_rama[,c(1:2)],#El primero es la selección de todas las filas de la matriz pero sólo las columnas 1 y 2
+               mip_rama[,c(5:ncol(mip_rama))] / as.vector(mip_rama[nrow(mip_rama),c(5:ncol(mip_rama))])) #El segundo es un cociente que divide cada elemento de la matriz, desde la columna 5 y en adelante entre el total de compras intermedias (`uetoni`), pero sólo a partir de la columna 5.
+
+#Asigna los nombres de las columnas, que se han perdido en el paso anterior, a la matriz X
+names(X)<-names(mip_rama)[-c(3,4)]
+#Elimina la última fila que tenía los totales de compras por rama
+X <- X %>% filter(cve_rama!='uetoni',cve_rama!="8141") %>%
+  dplyr::select(-"8141")
+
+X[is.na(X)]=0 # Sustituir los NA con cero 
+```
+
+En tanto, la matriz que caracteriza los patrones de ventas, $Y$ se construye con:
+
+```{r}
+u<-mip_rama$di_tot #Almacena el renglón de ventas totales, demanda intermedia
+Y<-mip_rama %>% 
+  mutate_at(names(mip_rama)[4:ncol(mip_rama)],funs((./u))) %>% #Lleva a cabo la división requerida desde la columna 4 hasta el final, es decir, divide cada elemento de todas las filas entre el vector u 
+  dplyr::select(-upipb,-di_tot,-"8141") %>% # Elimina las columnas de las variables indicadas
+  filter(cve_rama!='uetoni',cve_rama!="8141")
+
+Y[is.na(Y)]=0 # Sustituir los NA con cero
+```
+
+Una vez que ya se han calculado las dos matrices que describen los patrones de compras y ventas, el siguiente paso es llevar a cabo el análisis de correlación. No obstante, antes de ello, se presenta el resultado de las matrices para el caso de las 10 ramas de actividad más importantes en términos de su participación porcentual en el usos de la economía total de origen nacional e importado (`uetoni`). Dichas ramas son: 
+  
+* 4311	Comercio al por mayor de abarrotes y alimentos	(7.9%)  
+* 3241	Fabricación de productos derivados del petróleo y del carbón	(7.8%)  
+* 3363	Fabricación de partes para vehículos automotores	(4.6%)  
+* 2111	Extracción de petróleo y gas	(4.1%)
+* 5613	Servicios de empleo	(3.9%)
+* 3251	Fabricación de productos químicos básicos	(3.8%)  
+* 3344	Fabricación de componentes electrónicos	(2.9%)  
+* 2211	Generación, transmisión y distribución de energía eléctrica	(2.4%)
+* 5311	Alquiler sin intermediación de bienes raíces	(2.2%)
+* 3261	Fabricación de productos de plástico	(2.0%)
+
+### Análisis estructura compras {.tabset}
+
+#### 4311
+
+```{r}
+grafica_barras(X,sec_1111)
+```
+
+#### 3241
+
+
+```{r}
+grafica_barras(X,sec_3241)
+```
+
+#### 3363
+
+
+```{r}
+grafica_barras(X,sec_3363)
+```
+
+#### 2111
+
+
+```{r}
+grafica_barras(X,sec_2111)
+```
+
+#### 5613
+
+```{r}
+grafica_barras(X,sec_5613)
+```
+
+#### 3251
+
+```{r}
+grafica_barras(X,sec_3251)
+```
+
+#### 3344
+
+```{r}
+grafica_barras(X,sec_3344)
+```
+
+#### 2211
+
+```{r}
+grafica_barras(X,sec_2211)
+```
+
+#### 5311
+
+```{r}
+grafica_barras(X,sec_5311)
+```
+
+#### 3261
+
+```{r}
+grafica_barras(X,sec_3261)
+```
+
+### Análisis estructura ventas {.tabset}
+
+#### 4311
+
+
+```{r}
+grafica_barras(Y,sec_4311)
+```
+
+#### 3241
+
+```{r}
+grafica_barras(Y,sec_3241)
+```
+
+#### 3363
+
+
+```{r}
+grafica_barras(Y,sec_3363)
+```
+
+#### 2111
+
+```{r}
+grafica_barras(Y,sec_2111)
+```
+
+#### 5613
+
+```{r}
+grafica_barras(Y,sec_5613)
+```
+
+#### 3251
+
+```{r}
+grafica_barras(Y,sec_3251)
+```
+
+#### 3344
+
+```{r}
+grafica_barras(Y,sec_3344)
+```
+
+#### 2211
+
+```{r}
+grafica_barras(Y,sec_2211)
+```
+
+#### 5311
+
+```{r}
+grafica_barras(Y,sec_5311)
+```
+
+#### 3261
+
+```{r}
+grafica_barras(Y,sec_3261)
+```
+
+Ahora bien, con las matrices $X$ y $Y$ se lleva a cabo el análisis de correlación, del que se construyen cuatro matrices $A=r(x_l\cdot x_m)$, $B=r(y_l\cdot y_m)$, $C=r(x_l\cdot y_m)$ y $D=r(y_l\cdot x_m)$, mismas que se muestran a continuación con un mapa de calor.
+
+### Matrices de correlación {.tabset}
+
+#### A
+
+```{r}
+XX<-cor(X[,c(-1,-2)])
+corrplot(XX, method = 'color', type='lower', tl.cex = 0.5)
+```
+
+#### B
+
+```{r}
+YY<-cor(Y[,c(-1,-2)])
+corrplot(YY, method = 'color', type='lower', tl.cex = 0.5)
+```
+
+#### C
+
+```{r}
+XY<-cor(X[,c(-1,-2)],Y[,c(-1,-2)])
+corrplot(XY, method = 'color', type='lower', tl.cex = 0.5)
+```
+
+#### D
+```{r}
+YX<-cor(Y[,c(-1,-2)],X[,c(-1,-2)])
+corrplot(YX, method = 'color', type='lower', tl.cex = 0.5)
+```
+
+### Max
+
+Finalmente, del juego de matrices anterior, se construye una nueva matriz en que cada elemento corresponde al valor máximo correspondiente en las matrices previas. Esta última matriz, con la cual se llevará a cabo el análisis por componentes principales, se muestra también en un mapa de calor.
+
+```{r}
+Q1<-ifelse(XX>YY,XX,YY)
+Q2<-ifelse(Q1>XY,Q1,XY)
+Q3<-ifelse(Q2>YX,Q2,YX)
+max_rama<-Q3
+corrplot(max_rama, method = 'color', type='lower', tl.cex = 0.5)
+```
+
+
+### Análisis por componentes principales
+
+El procedimiento, de forma sintética, se puede dividir en:
+  
+i) Cálculo de los componentes principales (aplicación del PCA) 
+ii) Rotación de los componentes por *varimax*  
+iii) Delimitación del número de agrupamientos o cadenas según el número de componentes principales elegidos.  
+iv) Selección de las actividades que integran cada cadena con arreglo a los valores absolutos de las cargas.  
+
+En R, el análisis por componentes principales se desarrolla con la función `prcomp()`. La matriz que será sometida a PCA está integrada por coeficientes de correlación. Se procede como:
+
+```{r}
+PCAramaCS <- prcomp(max_rama, center = T, scale. = T)
+```
+
+El objeto que acaba de ser creado es de tipo `prcomp` y está integrado por los siguientes elementos: `sdev`, `rotation`, `center`, `scale`, `x`. `center` y `scale` corresponden a los valores centrados y escalados, respectivamente, de la variable original. En tanto, el resto:
+
+i) `x`: contiene los componentes principales (las combinaciones lineales de las variables). Los valores de este elemento nos permitirán hacer una gráfica bidimencional (bi-plot) para tener una representación de todas las variables pero "sintetizadas" o "reducida en sus dimensiones".  
+ii) `sdev`: corresponde a la desviación estándar de los componentes calculados. Sirve, cuando la elevamos al cuadrado, para conocer qué porcentaje de la variación de los datos originales es captada por cada componente.  
+iii) `rotation`: almacena las cargas (*loading scores*). Hay una carga para cada componente principal y para cada observación. Las cargas sirven para determinar qué sectores tienen el efecto más grande sobre el agrupamiento o cadena identificada.  
+
+Uno de los objetivos pues de la aplicación del PCA es la reducción de dimensiones: sintetizar la riqueza informativa de la base de datos (261 variables, es decir, interrelaciones entre sectores por sus patrones de compras y ventas) reducidos a determinado número de componentes. Una representación bidimiencional (con sólo dos variables, que explican a penas 40% de la variabilidad de la información) de nuestra base de datos original se hace con el bi-plot:
+
+```{r}
+comp1<-as.data.frame(PCAramaCS[["x"]])
+ramas <- row.names(PCAramaCS[["x"]])
+comp1 <- comp1 %>% add_column(ramas)
+
+ggplot(comp1)+
+  geom_text(aes(x=PC1,y=PC2),label=ramas)
+```
+
+Los sectores más cercanos son sectores más parecidos entre sí y aparecen más cerca, aunque sólo captando 40% de la variabilidad de la información original. Como se dijo, `sdev` sirve como criterio para la elección del número de componentes que mejor describe la información, ya sea a partir de la magnitud del eigenvalor (la desviación estándar elevada al cuadrado) cuyas componentes serán seleccionadas para la reducción de dimensiones si dicho valor es mayor a la unidad. Esto lo podemos observar a partir de gráfica de sedimentación, de la que hay dos versiones: i) absoluta: graficar el eigenvalor (la desviación estándar elevada al cuadrado) ii) relativa: graficar la proporción de la varianza explicada.
+
+
+```{r}
+#Versión con eigenvalores en términos absolutos
+plot(PCAramaCS$sdev^2, main='Gráfico de sedimentación',
+     ylab='Valor propio', xlab='Componente principal',
+     type='b', col='royalblue4')
+abline(h=1, lty=2, col='red')
+
+#Versión de proporción de varianza explicada
+pca.var <- PCAramaCS$sdev^2
+pca.var.per <- round(pca.var/sum(pca.var)*100, 1)
+plot(pca.var.per, main='Gráfico de sedimentación',
+     ylab='Porcentaje de variación', xlab='Componente principal',
+     type='b')
+```
+
+En el caso de lo que buscamos aquí, es decir, la identificación de determinado número de actividades que entre sí integran una cadena de valor, la decisión del número de componentes, es decir, del número de cadenas productivas, es hecha con arreglo a los siguientes criterios (Feser y Bergman, 2000):  
+  
+i) la proporción relativa de varianza que cada componente explica,  
+ii) el tamaño de los eigenvalores asociados,  
+iii) los diagramas de sedimentación.  
+
+Al solicitar un resumen del objeto que contiene los resultados del PCA se tiene que:
+
+```{r}
+summary(PCAramaCS)
+```
+
+De donde es posible observar qué número de componentes explican determinado porcentaje de varianza, de forma semejante al gráfico de sedimentación. Antes de la rotación, el número de componentes (agrupamientos) que se considera adecuado es 25, los que explican 92% de la varianza y en todos ellos el tamaño del eigenvalor es mayor a 1.
+
+Según lo indicado por Feser y Bergman (2000), la selección de las actividades que integran cada cadena productiva se hace observando las cargas dentro de cada agrupamiento, es decir, los valores absolutos del elemento `rotation`. De nuevo, Feser y Bergman (2000): "el conjunto generado de cargas (*loadings*) provee una medida de la fuerza relativa de los vínculos entre una industria dada y el factor derivado, en donde las industrias con las cargas más altas de un factor dado son tratadas como miembros de una cadena productiva" (p. 4). En la práctica es común en el análisis factorial considerar como significativas o dignas de interpretación sólo aquellas cargas que son más grandes que 0.5 (en términos absolutos). Para la selección de las actividades que integrarán cada cadena productiva, los autores que seguimos buscan hacer un balance de los siguientes objetivos (p. 4): 
+
+1. Identificar, mediante la magnitud de las cargas, los vínculos más estrechos de cada cluster, con independencia de si dicho sector está también vinculado estrechamente a otros cluster.
+2. Identificar, en la medida de lo posible, un conjunto de clusters mutuamente excluyentes, de modo que cada sector esté asignado a un solo cluster.
+3. Investigar los vínculos tanto entre clusteres como al interior de cada cluster.
+
+Así, respecto al objetivo 1, la elección de las actividades que integra cada cadena productiva es hecha a partir de la magnitud de la carga y los autores distinguen entre diferentes tipos de actividades: industrias primarias y secundarias. Las primarias son aquellas que, para una cadena, tienen un valor de la carga igual o mayor a 0.6, en tanto, una actividad secundaria es aquella que tiene una carga entre 0.35 y 0.6.
+
+No obstante, eso hay que hacerlo después de la rotación varimax. La librería `psych` permite seleccionar el método de rotación desde el cálculo de los componentes, a través de la función `principal()`. El siguiente segmento de código lleva a cabo el cálculo de los componentes principales rotados con varimax, donde se ha especificado que se desean 25 componentes, luego guarda las cargas en un `dataframe` para su análisis.
+
+```{r}
+PCAramaVM <- principal(r=max_rama,nfactors = 25,rotate = "varimax")
+cargasPCA <-cbind(nom_rama=X$nom_rama,data.frame(rama=row.names(max_rama),unclass(PCAramaVM$loadings)))
+```
+
+De los 25 componentes (cadenas productivas) obtenidas, 9 de ellas corresponden a actividades industriales, por ello, se seleccionan las de interés a través del siguiente segmento de código: 
+
+```{r}
+clusters<-c('RC3','RC6','RC8','RC10','RC12','RC13','RC15','RC17','RC20')
+
+ramas_ci<-cargasPCA %>%
+  dplyr::select(nom_rama,rama,RC3,RC6,RC8,RC10,RC12,RC13,RC15,RC17,RC20 )
+```
+
+Luego, esta información se apila para identificar más fácilmente las cargas y discriminar entre actividades que aparecen en varias cadenas simultáneamente:
+
+```{r}
+nc<-ncol(ramas_ci)-2
+remove(ramas_ci_row,cuadro)
+ramas_ci_row<-data.frame()
+
+for (i in 1:nc){
+  n<-i+2
+  selecion<- ramas_ci %>% dplyr::select(1,2,n)
+  cuadro<-custom_filtro(selecion)
+  ramas_ci_row<-rbind(ramas_ci_row,cuadro)
+    }
+```
+
+Las actividades que aparecen en más de una cadena aparecen con una cuenta mayor que uno en la siguiente tabla:
+
+```{r}
+Cuenta<- ramas_ci_row %>% 
+  count(rama) %>%
+  arrange(x=desc(n))
+Cuenta
+```
+Dichas actividades duplicadas se asignan a la cadena donde tienen la mayor carga:
+
+```{r}
+ramas_ci_final<-ramas_ci_row %>%
+  group_by (rama)%>%
+   filter (Carga == max (Carga, na.rm = TRUE ))
+```
+
+Ahora, sólo queda una actividad por cadena, como se indica en los criterios dados por Feser y Bergman (2000)
+
+```{r}
+Cuenta2<- ramas_ci_final %>% 
+  count(rama) %>%
+  arrange(desc(n))
+```
+
+El conjunto de ramas vinculadas a cada una de las nueve cadenas obtenidas se muestra en el siguiente cuadro:
+
+```{r}
+Cuadro_cruster<-ramas_ci_final  %>%
+  dplyr::select(cluster,rama)%>%
+  group_by(cluster) %>%
+  summarise(ramas = paste(rama, collapse = ", "))
+Cuadro_cruster %>%
+    arrange(factor(cluster, levels = clusters))%>%
+  kbl(caption = "Ramas más fuertemente vinculadas") %>%
+  kable_styling()
+```
+
+## Identificación de los complejos con el indicador de asociación espacial local de Moran
+
+En esta sección se expone el procedimiento para la identificación de  complejos industriales. La propuesta recurre al cálculo de coeficientes de autocorrelación espacial local de Moran, con base en la propuesta de Feser y Bergman [-@Feser-etal2005], adaptada a partir de las consideraciones de Anselin [-@Anselin2020local2].
+
+El objetivo es ubicar a nivel municipal las cadenas productivas industriales identificadas a través del método Feser y Bergman [-@Feser2000] que fueron resultado del análisis por componentes principales del apartado anterior donde se identificaron 9 cadenas productivas industriales: Metalmecánica, Química, Eléctrico-electrónica, Textiles, confección y prendas de vestir, Construcción, Autotransportes, Papel e impresión, Plásticos y fibras sintéticas y Muebles y productos de madera que aparecen en la tabla anterior.
+
+### Breve descripción del método
+
+Siguiendo las ideas de Feser et al. [-@Feser-etal2005] y González Villarreal et al. (2017), quienes proponen usar el estadístico de asociación espacial local de Getis-Ord ($G_i^*$) [@Getis1992], aquí más bien se propone el uso del estadistico de asociación espacial local de Moran, propuesto originalmente por Anselin [-@Anselin1995] y que tiene la forma de:
+
+$$
+I_i = c \cdot z_i \sum_j w_{ij} z_j
+$$
+
+La notación anterior corresponde a Anselin [-@Anselin2020local2], en ella $I_i$ es el estadístico de asociación espacial local de Moran, $z_i$ y $z_j$ corresponde al valor de la variable en la unidad territorial $i$ y $j$, que usualmente es el empleo, en términos estandarizados, en tanto, $w_{ij}$ es cada uno de los elementos de la matriz de pesos espaciales estandarizada por fila y, finalmente, $c$ corresponde a una constante dada por $\sum_i z_i^2$, que no es otra cosa que la suma del valor de la variable estandarizada.
+
+El $I_i$ puede  ser representado en mapas de agrupaciones con cuatro categorías de municipios: i) agrupamientos de municipios con altos valores en la variable utilizada rodeados de unidades territoriales vecinas también con valores altos (agrupamientos Alto-Alto); ii) agrupamientos de unidades territoriales con valores bajos en la variable rodeados de vecinos con esta misma característica (agrupamientos Bajo-Bajo); iii) agrupamientos de unidades territoriales con valores bajos rodeados de vecinos con valores altos (agrupamientos Bajo-Alto); y iv) agrupamientos de unidades territoriales con un conteo alto de la variable de interés rodeados de municipios con un bajo conteo (agrupamientos Alto-Bajo).  
+
+Cuando aquí se dece "alto" o "bajo" es en términos relativos, es decir, valores bajos o altos en el rango de la información utilizada. Las dos últimas categorías, los agrupamientos Bajo-Alto y Alto-Bajo, identifican unidades territoriales  como observaciones espaciales atípicas o _outliers_ espaciales.
+
+Para evitar sobredimensionar la importancia del empleo u ocupación en los municipios más grandes en términos de su empleo absoluto con independencia del papel que éste juegue en la cadena productiva [@GonzalezVillareal2017, p. 6; @Feser-etal2005, p. 403], el índice $I_i$ se construye usando como variable los errores ($u_i$) de una regresión lineal estimada con mínimos cuadrados ordinarios del empleo de cada una de las cadenas productivas en cada municipio sobre el empleo total de dicho municipio ^[Una exposición más detallada de esta consideración puede consultarse en Feser et al. [-@Feser-etal2005].], es decir:
+
+$$
+emp_i=\beta_0+\beta_1empCPi+u_i
+$$
+
+Donde $emp_i$ es el empleo total del municipio $i$, $empCPi$ corresponde al empleo de la cadena productiva considerada en el municipio $i$. El enfoque de Feser et al. (2005) y Villarreal et al. (2017) tiene algunas debilidades, mismas que a continuación se enuncian, así como una propuesta para subsanarlas en este trabajo. 
+
+### Fuentes de información
+
+La base geográfica utilizada proviene del Marco Geoestadistico Nacional [@INEGI2020mgn] que contiene 2,469 áreas geoestadísticas municipales (municipios), para la que se construyó una matriz de pesos espaciales de tipo reina de orden 1, en tanto, la información del personal ocupado corresponde al año 2013 y proviene de los Censos Económicos de 2019 [@INEGIce2020].
+
+### Desarrollo del método
+
+#### Preparación de la base de datos
+
+Para obtener los errores de la regresión lineal con base en la cual se construyen los indicadores locales de asociación espacial primero es necesario unir la información que identifica cada rama con una cadena en particular, con la información del personal ocupado total y por cadena y con la base de datos espacial. 
+
+Primero se carga la  base de datos con la información de los Censos Económicos que contiene los datos del personal ocupado:
+
+```{r}
+ce_rama2013<-(read_excel("D:/Industrial_Complexes/Bases de datos/ce_rama2013.xlsx",sheet = 'edición')) %>%
+  filter(rama!="mun") %>%
+  dplyr::select(-nom_rama)
+```
+
+Luego, se asigna a cada rama en la base de los censos económicos la cadena productiva a la que pertence: 
+
+```{r}
+ce_rama2013_ci<- ce_rama2013 %>% 
+  left_join(ramas_ci_final, by='rama') 
+```
+
+En un siguiente paso, se pasa de una base apilada (larga) a una base ancha, lo que prepara la información para asociarla a la base de datos espacial:
+
+```{r}
+ce_rama2013_ci_po<-ce_rama2013_ci %>%
+  filter(!is.na(po)) %>%
+  mutate(poblacion=po) %>%
+  dplyr::select(cvemun,ent,mun,rama,poblacion,po,cluster)%>%
+  pivot_wider(names_from =cluster, values_from = po)  %>% 
+  group_by(cvemun) %>% 
+  summarise_at(c("poblacion","RC12","RC6","RC17","RC10","RC20","RC15","RC3","RC8","RC13"),sum,na.rm=TRUE) %>% 
+  dplyr::select(cvemun,poblacion,clusters)
+```
+
+Se procede ahora a cargar la base de datos geográfica, es decir, la que contiene la información georreerenciada para los 2,496 municipios y a la que se asociará la información de los censos económicos:
+
+```{r}
+# Base geográfica municipal
+mun <- sf::st_read("Bases de datos/shp__mun_R/mun_mex.shp")
+names(ce_rama2013_ci_po)[1]<-'CVEMUN'
+```
+
+Ahora, se asocia la información espacial con la no espacial:
+```{r}
+mun_1<-ce_rama2013_ci_po %>% left_join(mun, by='CVEMUN')
+```
+
+
+#### Obtención de los errores del modelo de regresión
+
+Una vez cargada la base de datos espacial que contiene la información de los censos económicos, `mun`, se estima la regresión del empleo total de cada municipio (`po`) sobre el empleo en el municipio de cada una de las cadenas identificadas:
+
+```{r}
+
+mun_lm<- mun_1 %>% 
+  mutate(
+    re_RC3=lm(data = mun, formula = poblacion ~ RC3)$residuals,
+    re_RC6=lm(data = mun, formula = poblacion ~ RC6)$residuals,
+    re_RC8=lm(data = mun, formula = poblacion ~ RC8)$residuals,
+    re_RC10=lm(data = mun, formula = poblacion ~ RC10)$residuals,
+    re_RC12=lm(data = mun, formula = poblacion ~ RC12)$residuals,
+    re_RC13=lm(data = mun, formula = poblacion ~ RC13)$residuals,
+    re_RC15=lm(data = mun, formula = poblacion ~ RC15)$residuals,
+    re_RC17=lm(data = mun, formula = poblacion ~ RC17)$residuals,
+    re_RC20=lm(data = mun, formula = poblacion ~ RC20)$residuals
+         
+         ) %>%
+  dplyr::select(everything(),-geometry,geometry)
+
+```
+
+Esto añade a la base de datos espacial los errores de la regresión para poder operar con ellos.
+
+#### Cálculo del estadístico de asociación espacial
+
+Una vez que se tienen los errores de la regresión guardados como nuevas variables en la base de datos espacial, se computa el estadístico $I_i$ con dicha variable, usando la estructura espacial de tipo reina de orden 1. Para crear dicha estructura espacial se procede como:
+
+```{r}
+#Definición de la estructura espacial
+q_1 <- rgeoda::queen_weights(sf::st_read("Bases de datos/shp__mun_R/mun_mex.shp"))
+
+```
+
+Ahora, se estima cada uno de los coeficientes de asociación espacial local de Moran y se guardan en sus respectivos objetos:
+
+```{r}
+#Crea un objeto de tipo LISA con la estructura espacial definida que contiene el estatistico Ii
+Icl3 <- local_moran(w=q_1, df=mun_lm["re_RC3"])
+Icl6 <- local_moran(w=q_1, df=mun_lm["re_RC6"])
+Icl8 <- local_moran(w=q_1, df=mun_lm["re_RC8"])
+Icl10 <- local_moran(w=q_1, df=mun_lm["re_RC10"])
+Icl12 <- local_moran(w=q_1, df=mun_lm["re_RC12"])
+Icl13 <- local_moran(w=q_1, df=mun_lm["re_RC13"])
+Icl15 <- local_moran(w=q_1, df=mun_lm["re_RC15"])
+Icl17 <- local_moran(w=q_1, df=mun_lm["re_RC17"])
+Icl20 <- local_moran(w=q_1, df=mun_lm["re_RC20"])
+```
+
+#### Visualización de los complejos industriales: mapas de agrupamientos {.tabset}
+
+De acuerdo con el método, los municipios que integran los complejos industriales  de cada cadena productiva identificada son aquellos cuyo valor del indicador local de asociación espacial de Moran, $I_i$, es estadísticamente significativo al 5% y que además forman parte del agrupamiento Alto-Alto. Dichos municipios aparecen en los siguientes mapas de agrupamientos, junto con los municipios de las otras categorías. 
+
+##### Metal-mecánica
+
+```{r}
+ mapa_funcion(mun,Icl3)
+```
+
+##### Química
+
+
+```{r}
+ mapa_funcion(mun,Icl6)
+```
+
+##### Eléctrico-electrónica
+
+```{r}
+ mapa_funcion(mun,Icl8)
+```
+
+##### Textiles, confección y prendas de vestir
+
+```{r}
+ mapa_funcion(mun,Icl10)
+```
+
+##### Construcción
+
+```{r}
+ mapa_funcion(mun,Icl12)
+```
+
+##### Autotransportes
+
+```{r}
+ mapa_funcion(mun,Icl13)
+```
+
+##### Papel e impresión
+
+```{r}
+ mapa_funcion(mun,Icl15)
+```
+
+##### Plásticos y fibras sintéticas
+
+```{r}
+ mapa_funcion(mun,Icl17)
+```
+
+##### Muebles y productos de madera
+
+```{r}
+ mapa_funcion(mun,Icl20)
+```
+
+#### Visualización de los complejos industriales: Mapas de significancia {.tabset}
+
+Además, es usual presentar los resultados del mapa de agrupamientos junto con el llamado mapa de significancia, que muestra la signficancia individual de cada municipio en diferentes niveles:
+
+```{r eval=FALSE, include=FALSE}
+### Mapa de significancia
+#### Preliminares
+#### Extracción de los valores p asociados a cada observación
+lisa_p <- lisa_pvalues(Icl3)
+#### Definición de las etiquetas de cada grupo de valores p
+p_labels <- c("Not significant", "p <= 0.05", "p <= 0.01", "p <= 0.001")
+#### Definición de los colores de cada grupo de valores p
+p_colors <- c("#eeeeee", "#84f576", "#53c53c", "#348124")
+# Mapa de significancia: construcción
+plot(st_geometry(mun), 
+     col=sapply(lisa_p, function(x){
+       if (x <= 0.001) return(p_colors[4])
+       else if (x <= 0.01) return(p_colors[3])
+       else if (x <= 0.05) return (p_colors[2])
+       else return(p_colors[1])
+       }), 
+     border = "#333333", lwd=0.2)
+title(main = "Moran Local para la cadena metalmecánica")
+legend('bottomleft', legend = p_labels, fill = p_colors, border = "#eeeeee")
+```
+
+##### Metal-mecánica
+
+```{r}
+ mapa_sig(mun,Icl3)
+```
+
+##### Química
+
+
+```{r}
+ mapa_sig(mun,Icl6)
+```
+
+##### Eléctrico-electrónica
+
+```{r}
+ mapa_sig(mun,Icl8)
+```
+
+##### Textiles, confección y prendas de vestir
+
+```{r}
+ mapa_sig(mun,Icl10)
+```
+
+##### Construcción
+
+```{r}
+ mapa_sig(mun,Icl12)
+```
+
+##### Autotransportes
+
+```{r}
+ mapa_sig(mun,Icl13)
+```
+
+##### Papel e impresión
+
+```{r}
+ mapa_sig(mun,Icl15)
+```
+
+##### Plásticos y fibras sintéticas
+
+```{r}
+ mapa_sig(mun,Icl17)
+```
+
+##### Muebles y productos de madera
+
+```{r}
+ mapa_sig(mun,Icl20)
+```
+
+
+La siguiente tabla resume los resultados del número de municipios para cada cadena productiva, tanto los que integran los complejos industriales como los que forman parte de la categoría Alto-Bajo
+
+| Cadena productiva                        	| Municipios alto-alto 	| Municipios alto-bajo 	|
+|------------------------------------------	|----------------------	|----------------------	|
+| Metalmecánica.                           	| 71                   	| 11                   	|
+| Química.                                 	| 63                   	| 24                   	|
+| Eléctrico-electrónica.                   	| 81                   	| 8                    	|
+| Textiles, confección y prendas de vestir 	| 75                   	| 7                    	|
+| Construcción.                            	| 73                   	| 23                   	|
+| Autotransportes.                         	| 69                   	| 11                   	|
+| Papel e impresión.                       	| 79                   	| 6                    	|
+| Plásticos y fibras sintéticas.           	| 64                   	| 18                   	|
+| Muebles y productos de madera.           	| 59                   	| 14                   	|
+: Tabla 1. Complejos industriales industriales, 2013
