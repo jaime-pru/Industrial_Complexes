@@ -13,8 +13,8 @@ output:
     latex_engine: xelatex
   word_document:
     toc: yes
-bibliography: aglomeraciones.bib
-csl: "regional-science-and-urban-economics.csl"
+bibliography: Bibliografía/aglomeraciones.bib
+csl: Bibliografía/regional-science-and-urban-economics.csl
 ---
 
 ```{r setup, include=FALSE}
